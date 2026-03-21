@@ -2024,3 +2024,542 @@ document.addEventListener('DOMContentLoaded', () => {
   initGpuProgressBar();
   initTamDonut();
 });
+
+/* ══════════════════════════════════════════════
+   THE MOMENT IS NOW — JavaScript Enhancements
+   v1.0 — Counters, particles, paths, audience cards
+══════════════════════════════════════════════ */
+
+/* ─── Init on DOMContentLoaded ─── */
+document.addEventListener('DOMContentLoaded', () => {
+  initMomentCounters();
+  initTwoPathsParticles();
+  initTwoPathsScrollEffect();
+  initAudienceCards();
+  initFinalStatement();
+  initAudienceCTAPrefill();
+  initFinalCtaPrefill();
+  initSuccessParticles();
+});
+
+/* ══════════════════════════════════════════════
+   PART 1: Moment Counters — count up on scroll
+══════════════════════════════════════════════ */
+function initMomentCounters() {
+  const govEl  = document.getElementById('mc-gov');
+  const gpuEl  = document.getElementById('mc-gpu');
+  const mktEl  = document.getElementById('mc-mkt');
+
+  if (!govEl && !gpuEl && !mktEl) return;
+
+  let fired = false;
+
+  const io = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !fired) {
+      fired = true;
+      io.disconnect();
+
+      // ₹10,372 Cr — animate as integer
+      if (govEl) animateMomentCount(govEl, 0, 10372, 2200, v => '\u20b9' + v.toLocaleString('en-IN') + ' Cr');
+
+      // 200,000 GPUs
+      if (gpuEl) {
+        setTimeout(() => {
+          animateMomentCount(gpuEl, 0, 200000, 2400, v => v.toLocaleString('en-IN'));
+        }, 200);
+      }
+
+      // $126B
+      if (mktEl) {
+        setTimeout(() => {
+          animateMomentCount(mktEl, 0, 126, 2200, v => '$' + v + 'B');
+        }, 400);
+      }
+    }
+  }, { threshold: 0.4 });
+
+  const countersEl = document.querySelector('.moment-counters');
+  if (countersEl) io.observe(countersEl);
+}
+
+function animateMomentCount(el, from, to, duration, format) {
+  const startTime = performance.now();
+
+  // dramatic ease: fast start, slow finish
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function tick(now) {
+    const elapsed = now - startTime;
+    const t = Math.min(elapsed / duration, 1);
+    const eased = easeOutExpo(t);
+    const value = Math.round(from + (to - from) * eased);
+    el.textContent = format(value);
+    if (t < 1) requestAnimationFrame(tick);
+  }
+
+  el.style.opacity = '0';
+  setTimeout(() => {
+    el.style.transition = 'opacity 0.3s ease';
+    el.style.opacity = '1';
+    requestAnimationFrame(tick);
+  }, 60);
+}
+
+/* ══════════════════════════════════════════════
+   PART 2: Two Paths — Particle Canvases
+══════════════════════════════════════════════ */
+function initTwoPathsParticles() {
+  initWithoutParticles();
+  initWithParticles();
+}
+
+function initWithoutParticles() {
+  const canvas = document.getElementById('canvas-without');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let animFrame;
+  let active = false;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = 30;
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: 1.5 + Math.random() * 2,
+        // drift apart: random outward velocity
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        alpha: 0.3 + Math.random() * 0.5,
+        decay: 0.0008 + Math.random() * 0.0006,
+        color: Math.random() > 0.5 ? '#e85d5d' : '#8b4545',
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (!active) { animFrame = requestAnimationFrame(draw); return; }
+
+    particles.forEach(p => {
+      // Drift apart
+      p.x += p.vx;
+      p.y += p.vy;
+      p.alpha = Math.max(0, p.alpha - p.decay);
+
+      // Reset if faded or out of bounds
+      if (p.alpha <= 0.05 || p.x < -20 || p.x > canvas.width + 20 || p.y < -20 || p.y > canvas.height + 20) {
+        p.x = canvas.width / 2 + (Math.random() - 0.5) * 80;
+        p.y = canvas.height / 2 + (Math.random() - 0.5) * 80;
+        p.alpha = 0.3 + Math.random() * 0.5;
+        p.vx = (Math.random() - 0.5) * 0.6;
+        p.vy = (Math.random() - 0.5) * 0.6;
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fill();
+    });
+
+    ctx.globalAlpha = 1;
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  resize();
+  createParticles();
+  draw();
+
+  new ResizeObserver(() => { resize(); createParticles(); }).observe(canvas);
+
+  // Expose activation
+  canvas._activate = () => { active = true; };
+  canvas._deactivate = () => { active = false; };
+}
+
+function initWithParticles() {
+  const canvas = document.getElementById('canvas-with');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let animFrame;
+  let active = false;
+
+  // Orbital ring points (AdiOS logo style)
+  const ORBIT_RADIUS = [40, 70, 95];
+  const ORBIT_SPEED = [0.008, -0.005, 0.003];
+  const ORBIT_COUNT = [6, 10, 14];
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    createParticles();
+  }
+
+  function createParticles() {
+    particles = [];
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+
+    ORBIT_RADIUS.forEach((r, ri) => {
+      const count = ORBIT_COUNT[ri];
+      const speed = ORBIT_SPEED[ri];
+      for (let i = 0; i < count; i++) {
+        const baseAngle = (i / count) * Math.PI * 2;
+        particles.push({
+          cx, cy,
+          orbitR: r,
+          angle: baseAngle,
+          speed: speed,
+          r: ri === 0 ? 3 : ri === 1 ? 2 : 1.5,
+          color: ri === 0 ? '#d4a843' : ri === 1 ? '#4ecdc4' : 'rgba(212,168,67,0.6)',
+          alpha: 0,
+          targetAlpha: 0.7 + Math.random() * 0.3,
+          pulse: Math.random() * Math.PI * 2,
+        });
+      }
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const t = Date.now() * 0.001;
+
+    if (active) {
+      // Draw faint orbital rings
+      ORBIT_RADIUS.forEach(r => {
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, r, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(212,168,67,0.06)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+    }
+
+    particles.forEach(p => {
+      if (active) {
+        p.angle += p.speed;
+        p.alpha = Math.min(p.alpha + 0.02, p.targetAlpha);
+      } else {
+        p.alpha = Math.max(p.alpha - 0.02, 0);
+      }
+
+      const pulseFactor = 0.85 + 0.15 * Math.sin(t * 2 + p.pulse);
+      const x = p.cx + Math.cos(p.angle) * p.orbitR;
+      const y = p.cy + Math.sin(p.angle) * p.orbitR;
+
+      ctx.beginPath();
+      ctx.arc(x, y, p.r * pulseFactor, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fill();
+    });
+
+    ctx.globalAlpha = 1;
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+
+  new ResizeObserver(resize).observe(canvas);
+
+  canvas._activate = () => { active = true; };
+  canvas._deactivate = () => { active = false; };
+}
+
+/* ══════════════════════════════════════════════
+   TWO PATHS — Scroll-based dim/glow effect
+══════════════════════════════════════════════ */
+function initTwoPathsScrollEffect() {
+  const withoutCard = document.getElementById('path-without');
+  const withCard = document.getElementById('path-with');
+  if (!withoutCard || !withCard) return;
+
+  const canvasWithout = document.getElementById('canvas-without');
+  const canvasWith = document.getElementById('canvas-with');
+
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        // Activate particles
+        if (canvasWithout?._activate) canvasWithout._activate();
+        if (canvasWith?._activate) canvasWith._activate();
+
+        // Staggered effect: without dims, with glows
+        setTimeout(() => {
+          withoutCard.classList.add('paths-dimming');
+          withCard.classList.add('paths-glowing');
+        }, 600);
+      } else if (!entry.isIntersecting && triggered) {
+        // When scrolled away, pause
+        if (canvasWith?._deactivate) canvasWith._deactivate();
+        if (canvasWithout?._deactivate) canvasWithout._deactivate();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  io.observe(withoutCard.parentElement || withoutCard);
+}
+
+/* ══════════════════════════════════════════════
+   PART 3: Audience Cards — Stagger reveal
+══════════════════════════════════════════════ */
+function initAudienceCards() {
+  const grid = document.getElementById('audience-grid');
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll('.audience-card');
+
+  const io = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      io.disconnect();
+      cards.forEach((card, idx) => {
+        const delay = parseInt(card.getAttribute('data-aos-delay') || '0', 10);
+        setTimeout(() => {
+          card.classList.add('revealed');
+        }, delay + 100);
+      });
+    }
+  }, { threshold: 0.1 });
+
+  io.observe(grid);
+}
+
+/* ══════════════════════════════════════════════
+   PART 4: Final Statement Canvas — ambient particles
+══════════════════════════════════════════════ */
+function initFinalStatement() {
+  const canvas = document.getElementById('final-canvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  let animFrame;
+  let active = false;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    createStars();
+  }
+
+  function createStars() {
+    stars = [];
+    const count = 80;
+    for (let i = 0; i < count; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5 + 0.3,
+        alpha: Math.random() * 0.6,
+        vx: (Math.random() - 0.5) * 0.15,
+        vy: -Math.random() * 0.25 - 0.05, // drift upward
+        twinkle: Math.random() * Math.PI * 2,
+        color: Math.random() > 0.6 ? '#d4a843' : Math.random() > 0.5 ? '#4ecdc4' : '#ffffff',
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const t = Date.now() * 0.001;
+
+    stars.forEach(s => {
+      s.x += s.vx;
+      s.y += s.vy;
+      if (s.y < -5) { s.y = canvas.height + 5; s.x = Math.random() * canvas.width; }
+      if (s.x < -5) s.x = canvas.width + 5;
+      if (s.x > canvas.width + 5) s.x = -5;
+
+      const twinkle = 0.4 + 0.6 * Math.abs(Math.sin(t * 1.5 + s.twinkle));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = s.color;
+      ctx.globalAlpha = s.alpha * twinkle;
+      ctx.fill();
+    });
+
+    ctx.globalAlpha = 1;
+
+    // Central ambient glow
+    const grd = ctx.createRadialGradient(
+      canvas.width / 2, canvas.height / 2, 0,
+      canvas.width / 2, canvas.height / 2, 200
+    );
+    grd.addColorStop(0, 'rgba(212,168,67,0.04)');
+    grd.addColorStop(1, 'transparent');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  new ResizeObserver(resize).observe(canvas);
+}
+
+/* ══════════════════════════════════════════════
+   AUDIENCE CARD CTA PRE-FILL
+══════════════════════════════════════════════ */
+function initAudienceCTAPrefill() {
+  const ctaLinks = document.querySelectorAll('.audience-cta[data-prefill]');
+  const interestSelect = document.getElementById('wl-interest');
+
+  ctaLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const interest = link.getAttribute('data-prefill');
+
+      // Pre-fill the interest dropdown
+      if (interestSelect && interest) {
+        interestSelect.value = interest;
+        // Visual flash on the field
+        interestSelect.style.transition = 'border-color 0.3s ease, box-shadow 0.3s ease';
+        interestSelect.style.borderColor = 'rgba(212,168,67,0.8)';
+        interestSelect.style.boxShadow = '0 0 12px rgba(212,168,67,0.3)';
+        setTimeout(() => {
+          interestSelect.style.borderColor = '';
+          interestSelect.style.boxShadow = '';
+        }, 1500);
+      }
+
+      // Smooth scroll to waitlist
+      const waitlist = document.getElementById('waitlist');
+      if (waitlist) {
+        waitlist.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+/* ══════════════════════════════════════════════
+   FINAL CTA BUTTON — pre-fills and scrolls
+══════════════════════════════════════════════ */
+function initFinalCtaPrefill() {
+  const finalBtn = document.getElementById('final-cta-btn');
+  if (!finalBtn) return;
+
+  finalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const waitlist = document.getElementById('waitlist');
+    if (waitlist) {
+      waitlist.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
+/* ══════════════════════════════════════════════
+   SUCCESS PARTICLES — confetti burst on submit
+══════════════════════════════════════════════ */
+function initSuccessParticles() {
+  // Observe for when the form success state is shown
+  const successEl = document.getElementById('form-success');
+  if (!successEl) return;
+
+  // We hook into the existing form submission by observing DOM changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(mut => {
+      if (mut.type === 'attributes' && mut.attributeName === 'aria-hidden') {
+        const isVisible = successEl.getAttribute('aria-hidden') === 'false';
+        if (isVisible) {
+          setTimeout(launchSuccessParticles, 200);
+        }
+      }
+      // Also catch style display changes
+      if (mut.type === 'attributes' && mut.attributeName === 'style') {
+        const visible = successEl.style.display !== 'none' && successEl.style.display !== '';
+        if (visible) {
+          setTimeout(launchSuccessParticles, 200);
+        }
+      }
+    });
+  });
+
+  observer.observe(successEl, { attributes: true });
+}
+
+function launchSuccessParticles() {
+  const canvas = document.getElementById('success-particles');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  const parent = canvas.parentElement;
+  canvas.width = parent.offsetWidth || 400;
+  canvas.height = parent.offsetHeight || 300;
+
+  const colors = ['#d4a843', '#4ecdc4', '#f0c84a', '#ffffff', '#a8e6cf'];
+  const particles = [];
+
+  // Create 60 confetti particles
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      vx: (Math.random() - 0.5) * 12,
+      vy: -Math.random() * 10 - 4,
+      r: 2 + Math.random() * 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      alpha: 1,
+      gravity: 0.3 + Math.random() * 0.2,
+      rotation: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 8,
+      isRect: Math.random() > 0.5,
+    });
+  }
+
+  let frame;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += p.gravity;
+      p.vx *= 0.99;
+      p.alpha -= 0.016;
+      p.rotation += p.rotSpeed;
+
+      if (p.alpha > 0) {
+        alive = true;
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation * Math.PI / 180);
+        ctx.fillStyle = p.color;
+
+        if (p.isRect) {
+          ctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+        } else {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    });
+
+    if (alive) frame = requestAnimationFrame(animate);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  animate();
+}
+
