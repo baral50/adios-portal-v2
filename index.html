@@ -56,22 +56,7 @@
   <div class="nav-inner">
     <!-- Logo -->
     <a href="#home" class="nav-logo" aria-label="AdiOS Platform home">
-      <svg class="logo-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="20" r="4" fill="#d4a843"/>
-        <circle cx="8" cy="9" r="2.5" fill="#4ecdc4"/>
-        <circle cx="32" cy="9" r="2.5" fill="#4ecdc4"/>
-        <circle cx="8" cy="31" r="2.5" fill="#4ecdc4"/>
-        <circle cx="32" cy="31" r="2.5" fill="#4ecdc4"/>
-        <line x1="20" y1="20" x2="8" y2="9" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-        <line x1="20" y1="20" x2="32" y2="9" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-        <line x1="20" y1="20" x2="8" y2="31" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-        <line x1="20" y1="20" x2="32" y2="31" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-        <line x1="8" y1="9" x2="32" y2="9" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-        <line x1="8" y1="31" x2="32" y2="31" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-        <line x1="8" y1="9" x2="8" y2="31" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-        <line x1="32" y1="9" x2="32" y2="31" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-      </svg>
-      <span class="logo-text">AdiOS</span>
+      <img src="assets/logo-dark.jpg" alt="AdiOS" class="nav-logo-img" height="36">
     </a>
 
     <!-- Main nav links -->
@@ -94,21 +79,19 @@
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Enterprise</a>
         </div>
       </li>
-      <li class="nav-item has-dropdown">
-        <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">Marketplace <span class="nav-arrow">▾</span></button>
-        <div class="dropdown" role="menu">
-          <a href="#marketplace" class="dropdown-item" role="menuitem">Overview</a>
-          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Models</a>
-          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Data Products</a>
-        </div>
+      <li class="nav-item">
+        <a href="#marketplace" class="nav-link coming-soon" data-soon="true">Marketplace</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link coming-soon" data-soon="true">Blog</a>
       </li>
       <li class="nav-item has-dropdown">
         <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">Developers <span class="nav-arrow">▾</span></button>
         <div class="dropdown" role="menu">
-          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Documentation</a>
+          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Docs</a>
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Open Source</a>
-          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Community</a>
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">API Reference</a>
+          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Community</a>
         </div>
       </li>
       <li class="nav-item has-dropdown">
@@ -116,6 +99,7 @@
         <div class="dropdown" role="menu">
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">About</a>
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Team</a>
+          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Careers</a>
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Investors</a>
           <a href="mailto:contact@adiosplat.io" class="dropdown-item" role="menuitem">Contact</a>
         </div>
@@ -151,6 +135,64 @@
     <li><a href="#waitlist" class="btn-primary mobile-cta">Boot Demo</a></li>
   </ul>
 </div>
+
+<!-- ══════════════════════════════════════════════
+     SIDEBAR — Left Section Navigation
+══════════════════════════════════════════════ -->
+<aside class="sidebar" id="sidebar" aria-label="Page sections">
+  <div class="sidebar-inner">
+    <div class="sidebar-brand">
+      <img src="assets/icon-128.jpg" alt="AdiOS" class="sidebar-icon" width="32" height="32">
+    </div>
+    <nav class="sidebar-nav" aria-label="Section navigation">
+      <a href="#home" class="sidebar-link" data-section="home">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Boot Sovereign</span>
+      </a>
+      <a href="#problem" class="sidebar-link" data-section="problem">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">The Problem</span>
+      </a>
+      <a href="#solution" class="sidebar-link" data-section="solution">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Three Pillars</span>
+      </a>
+      <a href="#innovation" class="sidebar-link" data-section="innovation">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Trust Engine</span>
+      </a>
+      <a href="#stack" class="sidebar-link" data-section="stack">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Stack Position</span>
+      </a>
+      <a href="#impact" class="sidebar-link" data-section="impact">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Real Impact</span>
+      </a>
+      <a href="#usecase" class="sidebar-link" data-section="usecase">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Use Case</span>
+      </a>
+      <a href="#business" class="sidebar-link" data-section="business">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Business Model</span>
+      </a>
+      <a href="#marketplace" class="sidebar-link" data-section="marketplace">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Marketplace</span>
+      </a>
+      <a href="#waitlist" class="sidebar-link" data-section="waitlist">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">Boot Access</span>
+      </a>
+    </nav>
+  </div>
+</aside>
+
+<!-- ══════════════════════════════════════════════
+     MAIN CONTENT WRAPPER
+══════════════════════════════════════════════ -->
+<div class="main-content" id="main-content">
 
 <!-- ══════════════════════════════════════════════
      SECTION 1: HERO — Boot Sovereign
@@ -1155,32 +1197,30 @@
 ══════════════════════════════════════════════ -->
 <footer class="footer" id="footer" aria-label="Footer">
   <div class="container">
+    <!-- Footer top: brand + nav columns -->
     <div class="footer-top">
       <!-- Brand column -->
       <div class="footer-brand">
-        <a href="#home" class="nav-logo footer-logo" aria-label="AdiOS Platform">
-          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <circle cx="20" cy="20" r="4" fill="#d4a843"/>
-            <circle cx="8" cy="9" r="2.5" fill="#4ecdc4"/>
-            <circle cx="32" cy="9" r="2.5" fill="#4ecdc4"/>
-            <circle cx="8" cy="31" r="2.5" fill="#4ecdc4"/>
-            <circle cx="32" cy="31" r="2.5" fill="#4ecdc4"/>
-            <line x1="20" y1="20" x2="8" y2="9" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-            <line x1="20" y1="20" x2="32" y2="9" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-            <line x1="20" y1="20" x2="8" y2="31" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-            <line x1="20" y1="20" x2="32" y2="31" stroke="#d4a843" stroke-width="1.2" stroke-opacity="0.8"/>
-            <line x1="8" y1="9" x2="32" y2="9" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-            <line x1="8" y1="31" x2="32" y2="31" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-            <line x1="8" y1="9" x2="8" y2="31" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-            <line x1="32" y1="9" x2="32" y2="31" stroke="#4ecdc4" stroke-width="0.6" stroke-opacity="0.5"/>
-          </svg>
-          <span class="logo-text">AdiOS</span>
+        <a href="#home" class="footer-logo-link" aria-label="AdiOS Platform">
+          <img src="assets/logo-dark.jpg" alt="AdiOS" class="footer-logo-img" height="40">
         </a>
-        <p class="footer-tagline">Sovereign AI Operating System<br>for India's Regulated Enterprises</p>
+        <p class="footer-tagline">Sovereign AI Operating System</p>
         <div class="footer-contact">
           <a href="mailto:contact@adiosplat.io" class="footer-contact-item">contact@adiosplat.io</a>
           <a href="tel:+917762006300" class="footer-contact-item">+91 77620 06300</a>
           <span class="footer-contact-item">Hyderabad, Telangana, India</span>
+        </div>
+        <!-- Social links -->
+        <div class="footer-socials">
+          <a href="https://twitter.com/adiosplatform" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/adios-platform" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/baral50" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
         </div>
       </div>
 
@@ -1190,18 +1230,20 @@
           <h4 class="footer-nav-title">Platform</h4>
           <ul class="footer-nav-list" role="list">
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Architecture</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Brain</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Brain Engine</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Lakehouse</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Governance</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">IPC Bus</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
           <h4 class="footer-nav-title">Solutions</h4>
           <ul class="footer-nav-list" role="list">
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">BFSI</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Financial Services</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Government</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Agriculture</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Enterprise</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Healthcare</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Manufacturing</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
@@ -1209,26 +1251,44 @@
           <ul class="footer-nav-list" role="list">
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Documentation</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Open Source</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Community</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">API Reference</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Community</a></li>
+            <li><a href="https://github.com/baral50" target="_blank" rel="noopener noreferrer" class="footer-nav-link">GitHub</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
           <h4 class="footer-nav-title">Company</h4>
           <ul class="footer-nav-list" role="list">
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">About</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">About Us</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Team</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Careers</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Investors</a></li>
             <li><a href="mailto:contact@adiosplat.io" class="footer-nav-link">Contact</a></li>
+            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Blog</a></li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <!-- Newsletter row -->
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-inner">
+        <div class="footer-newsletter-text">
+          <span class="footer-newsletter-title">Stay updated on AdiOS</span>
+          <span class="footer-newsletter-sub">Platform updates, release notes, and sovereign AI insights.</span>
+        </div>
+        <form class="footer-newsletter-form" id="newsletter-form" novalidate>
+          <input type="email" class="footer-newsletter-input" placeholder="your@enterprise.in" aria-label="Email for newsletter">
+          <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+        </form>
       </div>
     </div>
 
     <!-- Footer bottom -->
     <div class="footer-bottom">
       <div class="footer-legal">
-        <span class="footer-cin">AdiOS Platform Private Limited · CIN: U58201TS2026PTC211867 · Hyderabad, India</span>
+        <span class="footer-copy">© 2026 AdiOS Platform Private Limited. All rights reserved.</span>
+        <span class="footer-cin">CIN: U58201TS2026PTC211867 &nbsp;│&nbsp; <a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a> &nbsp;│&nbsp; +91 7762006300</span>
       </div>
       <div class="footer-links">
         <button type="button" class="footer-link-btn" id="footer-privacy">Privacy Policy</button>
@@ -1243,6 +1303,7 @@
     </div>
   </div>
 </footer>
+</div><!-- /.main-content -->
 
 <!-- ══════════════════════════════════════════════
      MODALS

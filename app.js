@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initFooterModals();
   initScrollSpy();
+  initSidebarScrollSpy();
+  initNewsletterForm();
 });
 
 /* ══════════════════════════════════════════════
@@ -555,6 +557,82 @@ function initScrollSpy() {
         window.scrollTo({ top: offset, behavior: 'smooth' });
       }
     });
+  });
+}
+
+/* ══════════════════════════════════════════════
+   SIDEBAR SCROLL-SPY
+══════════════════════════════════════════════ */
+function initSidebarScrollSpy() {
+  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-section]');
+  if (!sidebarLinks.length) return;
+
+  const sectionIds = [...sidebarLinks].map(l => l.dataset.section);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  if (!sections.length) return;
+
+  // Mark first section active initially
+  sidebarLinks[0]?.classList.add('active');
+
+  // IntersectionObserver for scroll-spy
+  let activeId = sectionIds[0];
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activeId = entry.target.id;
+        sidebarLinks.forEach(link => {
+          const isActive = link.dataset.section === activeId;
+          link.classList.toggle('active', isActive);
+        });
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0,
+  });
+
+  sections.forEach(s => io.observe(s));
+
+  // Smooth scroll on sidebar link click
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(link.dataset.section);
+      if (target) {
+        const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
+}
+
+/* ══════════════════════════════════════════════
+   NEWSLETTER FORM
+══════════════════════════════════════════════ */
+function initNewsletterForm() {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input[type="email"]');
+    const btn = form.querySelector('button');
+    if (!input?.value.trim() || !input.value.includes('@')) {
+      input?.focus();
+      return;
+    }
+    if (btn) {
+      btn.textContent = 'Subscribed!';
+      btn.disabled = true;
+      btn.style.background = '#4ecdc4';
+      setTimeout(() => {
+        btn.textContent = 'Subscribe';
+        btn.disabled = false;
+        btn.style.background = '';
+        if (input) input.value = '';
+      }, 3000);
+    }
   });
 }
 
