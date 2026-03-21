@@ -20,10 +20,10 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AdiOS Platform — Sovereign AI Operating System for India's Regulated Enterprises. Boot to your knowledge graph in 90 seconds.">
+<meta name="description" content="AdiOS Platform — Sovereign AI Operating System for India's Regulated Enterprises. One query. Three engines. Full sovereignty. Boot to your knowledge graph in 90 seconds.">
 <meta name="keywords" content="sovereign AI, AI operating system, India, DPDP, BFSI, knowledge graph, enterprise AI">
 <meta property="og:title" content="AdiOS Platform — Boot Sovereign">
-<meta property="og:description" content="The AI Operating System Built for India's Regulated Enterprises.">
+<meta property="og:description" content="The AI Operating System for India's Regulated Enterprises. One query. Three engines. Full sovereignty.">
 <meta property="og:type" content="website">
 <title>AdiOS Platform — Boot Sovereign</title>
 
@@ -49,6 +49,9 @@
   </div>
 </div>
 
+<!-- Coming Soon Tooltip -->
+<div id="cs-tooltip" class="cs-tooltip" role="tooltip" aria-live="polite">Coming Soon</div>
+
 <!-- ══════════════════════════════════════════════
      NAVIGATION
 ══════════════════════════════════════════════ -->
@@ -65,7 +68,7 @@
         <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">Platform <span class="nav-arrow">▾</span></button>
         <div class="dropdown" role="menu">
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Architecture</a>
-          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Brain</a>
+          <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Brain Engine</a>
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Lakehouse</a>
           <a href="#" class="dropdown-item coming-soon" data-soon="true" role="menuitem">Governance</a>
         </div>
@@ -80,10 +83,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a href="#marketplace" class="nav-link coming-soon" data-soon="true">Marketplace</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link coming-soon" data-soon="true">Blog</a>
+        <a href="#marketplace" class="nav-link">Marketplace</a>
       </li>
       <li class="nav-item has-dropdown">
         <button class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">Developers <span class="nav-arrow">▾</span></button>
@@ -122,13 +122,12 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <ul class="mobile-nav-links" role="list">
-    <li><a href="#home" class="mobile-nav-link">Home</a></li>
-    <li><a href="#problem" class="mobile-nav-link">Problem</a></li>
-    <li><a href="#solution" class="mobile-nav-link">Solution</a></li>
-    <li><a href="#innovation" class="mobile-nav-link">Innovation</a></li>
-    <li><a href="#stack" class="mobile-nav-link">Stack Position</a></li>
-    <li><a href="#impact" class="mobile-nav-link">Impact</a></li>
-    <li><a href="#usecase" class="mobile-nav-link">Use Case</a></li>
+    <li><a href="#home" class="mobile-nav-link">Boot Sovereign</a></li>
+    <li><a href="#story" class="mobile-nav-link">Why India Needs This</a></li>
+    <li><a href="#solution" class="mobile-nav-link">Three Engines</a></li>
+    <li><a href="#seeit" class="mobile-nav-link">See It Work</a></li>
+    <li><a href="#trust" class="mobile-nav-link">Trust Engine</a></li>
+    <li><a href="#stack" class="mobile-nav-link">Where We Fit</a></li>
     <li><a href="#business" class="mobile-nav-link">Business Model</a></li>
     <li><a href="#marketplace" class="mobile-nav-link">Marketplace</a></li>
     <li><a href="#waitlist" class="mobile-nav-link">Request Access</a></li>
@@ -149,29 +148,25 @@
         <span class="sidebar-dot" aria-hidden="true"></span>
         <span class="sidebar-label">Boot Sovereign</span>
       </a>
-      <a href="#problem" class="sidebar-link" data-section="problem">
+      <a href="#story" class="sidebar-link" data-section="story">
         <span class="sidebar-dot" aria-hidden="true"></span>
-        <span class="sidebar-label">The Problem</span>
+        <span class="sidebar-label">Why India Needs This</span>
       </a>
       <a href="#solution" class="sidebar-link" data-section="solution">
         <span class="sidebar-dot" aria-hidden="true"></span>
-        <span class="sidebar-label">Three Pillars</span>
+        <span class="sidebar-label">Three Engines</span>
       </a>
-      <a href="#innovation" class="sidebar-link" data-section="innovation">
+      <a href="#seeit" class="sidebar-link" data-section="seeit">
+        <span class="sidebar-dot" aria-hidden="true"></span>
+        <span class="sidebar-label">See It Work</span>
+      </a>
+      <a href="#trust" class="sidebar-link" data-section="trust">
         <span class="sidebar-dot" aria-hidden="true"></span>
         <span class="sidebar-label">Trust Engine</span>
       </a>
       <a href="#stack" class="sidebar-link" data-section="stack">
         <span class="sidebar-dot" aria-hidden="true"></span>
-        <span class="sidebar-label">Stack Position</span>
-      </a>
-      <a href="#impact" class="sidebar-link" data-section="impact">
-        <span class="sidebar-dot" aria-hidden="true"></span>
-        <span class="sidebar-label">Real Impact</span>
-      </a>
-      <a href="#usecase" class="sidebar-link" data-section="usecase">
-        <span class="sidebar-dot" aria-hidden="true"></span>
-        <span class="sidebar-label">Use Case</span>
+        <span class="sidebar-label">Where We Fit</span>
       </a>
       <a href="#business" class="sidebar-link" data-section="business">
         <span class="sidebar-dot" aria-hidden="true"></span>
@@ -202,7 +197,7 @@
   <canvas id="node-graph" class="hero-canvas" aria-hidden="true"></canvas>
   
   <div class="hero-content">
-    <!-- Terminal header -->
+    <!-- Terminal window -->
     <div class="terminal-window reveal-up">
       <div class="terminal-titlebar">
         <span class="dot dot-red"></span>
@@ -226,17 +221,17 @@
         <span class="eyebrow-text">SYSTEM ONLINE — SOVEREIGN MODE ACTIVE</span>
       </div>
       <h1 class="hero-title">
-        <span class="title-main">AdiOS:</span>
-        <span class="title-accent"> Boot Sovereign.</span>
+        <span class="title-main">AdiOS</span>
+        <span class="title-accent"> is the AI Operating System</span><br>
+        <span class="title-sub">for India's regulated enterprises.</span>
       </h1>
-      <p class="hero-subtitle">Intelligence as an Operating System, Not a Service.</p>
-      <p class="hero-desc">The AI Operating System built for India's regulated enterprises.<br>Boot to your knowledge graph in <strong>90 seconds</strong>.</p>
+      <p class="hero-desc">One query. Three engines. Full sovereignty.<br>Boot to your knowledge graph in <strong>90 seconds</strong>.</p>
     </div>
 
     <!-- CTA Buttons -->
     <div class="hero-cta reveal-up">
       <a href="#waitlist" class="btn-primary btn-lg">Request Boot Demo</a>
-      <a href="#solution" class="btn-ghost btn-lg">Explore Architecture →</a>
+      <a href="#story" class="btn-ghost btn-lg scroll-next">Watch How It Works ↓</a>
     </div>
   </div>
 
@@ -244,13 +239,8 @@
   <div class="stats-strip" aria-label="Platform statistics">
     <div class="stats-inner">
       <div class="stat-item">
-        <span class="stat-num">36</span>
-        <span class="stat-label">Components</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true">|</div>
-      <div class="stat-item">
-        <span class="stat-num">5</span>
-        <span class="stat-label">Divisions</span>
+        <span class="stat-num">127ms</span>
+        <span class="stat-label">Query Time</span>
       </div>
       <div class="stat-divider" aria-hidden="true">|</div>
       <div class="stat-item">
@@ -259,105 +249,115 @@
       </div>
       <div class="stat-divider" aria-hidden="true">|</div>
       <div class="stat-item">
-        <span class="stat-num">127ms</span>
-        <span class="stat-label">Query Time</span>
+        <span class="stat-num">DPDP</span>
+        <span class="stat-label">Native</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true">|</div>
+      <div class="stat-item">
+        <span class="stat-num">Zero</span>
+        <span class="stat-label">Data Movement</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 2: PROBLEM — Critical Infrastructure Gap
+     SECTION 2: THE STORY — Why India Needs a Sovereign AI OS
 ══════════════════════════════════════════════ -->
-<section class="section problem-section" id="problem" aria-label="The problem">
+<section class="section story-section" id="story" aria-label="Why India needs this">
   <div class="section-label">
     <span class="label-line" aria-hidden="true"></span>
-    <span class="label-text">SYSTEM ALERT</span>
+    <span class="label-text">THE STORY</span>
     <span class="label-line" aria-hidden="true"></span>
   </div>
 
   <div class="container">
     <div class="section-header reveal-up">
-      <h2 class="section-title error-title">Critical Infrastructure Gap</h2>
-      <p class="section-desc">India's regulated enterprises are running on borrowed infrastructure — every data exchange is a compliance risk, every insight a seven-month wait.</p>
+      <h2 class="section-title">Why India Needs a Sovereign AI OS</h2>
+      <p class="story-narrative">India is deploying <strong>₹10,300 crore</strong> into AI. <strong>38,000+ GPUs</strong> are coming online. Sarvam, Gnani, and BharatGen are building sovereign models. But there's a critical gap: <em>no operating system connects compute to applications while keeping data within Indian borders.</em></p>
     </div>
 
-    <div class="fracture-grid reveal-up">
-      <!-- Card 1 -->
-      <div class="fracture-card">
-        <div class="fracture-header">
-          <span class="err-badge">ERR_SOVEREIGNTY</span>
-          <span class="err-code">0x001</span>
+    <div class="story-cards reveal-up">
+      <!-- Card 1: Data Leaves India -->
+      <div class="story-card">
+        <div class="story-card-icon story-icon-red" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="18" stroke="#e85d5d" stroke-width="1.5" opacity="0.4"/>
+            <path d="M24 6 L24 42" stroke="#e85d5d" stroke-width="1.5" opacity="0.3"/>
+            <path d="M6 24 L42 24" stroke="#e85d5d" stroke-width="1.5" opacity="0.3"/>
+            <path d="M16 10 Q24 18 32 10" stroke="#e85d5d" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <path d="M16 38 Q24 30 32 38" stroke="#e85d5d" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <path d="M30 34 L38 38 L34 30" fill="#e85d5d" opacity="0.8"/>
+          </svg>
         </div>
-        <h3 class="fracture-title">The Sovereignty Fracture</h3>
-        <p class="fracture-desc">Indian financial institutions and government agencies send sensitive citizen data to foreign hyperscalers for AI processing — violating DPDP Act requirements and creating unacceptable sovereignty risks.</p>
-        <div class="fracture-impact">
-          <span class="impact-label">EXPOSURE SURFACE:</span>
-          <span class="impact-val">500+ TB citizen data / year</span>
-        </div>
+        <h3 class="story-card-title">Data Leaves India</h3>
+        <p class="story-card-desc">Cloud AI means your data crosses borders. The DPDP Act says otherwise. Every query to a foreign hyperscaler is a compliance breach waiting to happen.</p>
+        <div class="story-card-tag story-tag-red">DPDP Act Violation Risk</div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="fracture-card">
-        <div class="fracture-header">
-          <span class="err-badge">ERR_TRUST_FAIL</span>
-          <span class="err-code">0x002</span>
+      <!-- Card 2: AI Can't Prove Its Answers -->
+      <div class="story-card">
+        <div class="story-card-icon story-icon-amber" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="10" y="8" width="28" height="32" rx="3" stroke="#d4a843" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <line x1="16" y1="18" x2="32" y2="18" stroke="#d4a843" stroke-width="1.5" opacity="0.7"/>
+            <line x1="16" y1="25" x2="32" y2="25" stroke="#d4a843" stroke-width="1.5" opacity="0.7"/>
+            <line x1="16" y1="32" x2="24" y2="32" stroke="#d4a843" stroke-width="1.5" opacity="0.7"/>
+            <circle cx="36" cy="36" r="8" fill="#131720" stroke="#d4a843" stroke-width="1.5"/>
+            <text x="36" y="40" text-anchor="middle" fill="#d4a843" font-size="10" font-weight="bold">?</text>
+          </svg>
         </div>
-        <h3 class="fracture-title">The Trust Fracture</h3>
-        <p class="fracture-desc">AI outputs in regulated domains carry no provenance, no confidence scores, no audit trail. A hallucinated loan decision or medical recommendation looks identical to a verified one — until harm occurs.</p>
-        <div class="fracture-impact">
-          <span class="impact-label">CONFIDENCE SCORE:</span>
-          <span class="impact-val error-val">UNKNOWN</span>
-        </div>
+        <h3 class="story-card-title">AI Can't Prove Its Answers</h3>
+        <p class="story-card-desc">No confidence scores. No provenance. No audit trail. A hallucinated loan decision looks identical to a verified one — until harm occurs. Regulators will ask.</p>
+        <div class="story-card-tag story-tag-amber">Regulator Audit Risk</div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="fracture-card">
-        <div class="fracture-header">
-          <span class="err-badge">ERR_COMPLIANCE</span>
-          <span class="err-code">0x003</span>
+      <!-- Card 3: Compliance Is Bolted On -->
+      <div class="story-card">
+        <div class="story-card-icon story-icon-red" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="8" y="8" width="22" height="22" rx="3" stroke="#e85d5d" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <rect x="18" y="18" width="22" height="22" rx="3" stroke="#e85d5d" stroke-width="1.5" fill="#131720" opacity="0.9"/>
+            <path d="M26 26 L33 33" stroke="#e85d5d" stroke-width="2" stroke-dasharray="3 2" opacity="0.7"/>
+            <circle cx="34" cy="34" r="5" fill="#131720" stroke="#e85d5d" stroke-width="1.5"/>
+            <line x1="32" y1="32" x2="36" y2="36" stroke="#e85d5d" stroke-width="1.5"/>
+            <line x1="36" y1="32" x2="32" y2="36" stroke="#e85d5d" stroke-width="1.5"/>
+          </svg>
         </div>
-        <h3 class="fracture-title">The Compliance Fracture</h3>
-        <p class="fracture-desc">DPDP Act, RBI Data Localization, IRDAI guidelines, BCBS239 — compliance is bolted on after the fact, creating 3-week manual review cycles that make real-time AI operationally impossible.</p>
-        <div class="fracture-impact">
-          <span class="impact-label">COMPLIANCE LAG:</span>
-          <span class="impact-val">3 weeks / query cycle</span>
-        </div>
+        <h3 class="story-card-title">Compliance is Bolted On</h3>
+        <p class="story-card-desc">RBI, IRDAI, SEBI rules are ignored by generic platforms. Compliance is retrofitted as a 3-week manual review cycle — making real-time AI operationally impossible.</p>
+        <div class="story-card-tag story-tag-red">3-Week Review Cycles</div>
       </div>
     </div>
 
-    <!-- System halted bar -->
-    <div class="system-halted reveal-up" role="alert">
-      <span class="halt-icon" aria-hidden="true">⚠</span>
-      <span class="halt-text">SYSTEM HALTED: Critical Infrastructure Gap Detected</span>
-      <div class="halt-tags">
-        <span class="halt-tag">DPDP Act</span>
-        <span class="halt-tag">RBI Data Loc</span>
-        <span class="halt-tag">IRDAI</span>
-        <span class="halt-tag">BCBS239</span>
+    <!-- Bottom line -->
+    <div class="story-bottom reveal-up">
+      <div class="story-bottom-inner">
+        <span class="story-bottom-icon" aria-hidden="true">◈</span>
+        <p class="story-bottom-text">These aren't bugs to fix. They're architecture problems.<br><strong>You need sovereignty at the kernel level.</strong></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 3: SOLUTION — Three Pillars
+     SECTION 3: THE SOLUTION — Three Engines, One OS
 ══════════════════════════════════════════════ -->
-<section class="section solution-section" id="solution" aria-label="The solution">
+<section class="section solution-section" id="solution" aria-label="Three engines, one OS">
   <div class="section-label">
     <span class="label-line" aria-hidden="true"></span>
-    <span class="label-text">ARCHITECTURE</span>
+    <span class="label-text">THE SOLUTION</span>
     <span class="label-line" aria-hidden="true"></span>
   </div>
 
   <div class="container">
     <div class="section-header reveal-up">
-      <h2 class="section-title">Three Pillars of Sovereign Intelligence</h2>
-      <p class="section-desc">A single bootable OS. Three interlocking engines. One query interface across every enterprise data domain.</p>
+      <h2 class="section-title">Three Engines, One OS</h2>
+      <p class="section-desc">AdiOS has three engines working together — one query interface, three specialized capabilities, zero data movement.</p>
     </div>
 
     <div class="pillars-grid reveal-up">
-      <!-- Pillar 1: Brain -->
+      <!-- Engine 1: BRAIN -->
       <div class="pillar-card pillar-brain">
         <div class="pillar-header">
           <div class="pillar-icon brain-icon" aria-hidden="true">
@@ -367,19 +367,23 @@
               <circle cx="36" cy="14" r="3" fill="#d4a843" opacity="0.5"/>
               <circle cx="12" cy="34" r="3" fill="#d4a843" opacity="0.5"/>
               <circle cx="36" cy="34" r="3" fill="#d4a843" opacity="0.5"/>
+              <circle cx="8" cy="24" r="2" fill="#d4a843" opacity="0.35"/>
+              <circle cx="40" cy="24" r="2" fill="#d4a843" opacity="0.35"/>
               <line x1="24" y1="24" x2="12" y2="14" stroke="#d4a843" stroke-width="1.5"/>
               <line x1="24" y1="24" x2="36" y2="14" stroke="#d4a843" stroke-width="1.5"/>
               <line x1="24" y1="24" x2="12" y2="34" stroke="#d4a843" stroke-width="1.5"/>
               <line x1="24" y1="24" x2="36" y2="34" stroke="#d4a843" stroke-width="1.5"/>
+              <line x1="24" y1="24" x2="8" y2="24" stroke="#d4a843" stroke-width="1" opacity="0.5"/>
+              <line x1="24" y1="24" x2="40" y2="24" stroke="#d4a843" stroke-width="1" opacity="0.5"/>
             </svg>
           </div>
-          <div class="pillar-tag">BRAIN</div>
+          <div class="pillar-tag">ENGINE 1: BRAIN</div>
         </div>
         <div class="pillar-stack">
           <span class="stack-chip">Oxigraph</span>
           <span class="stack-chip">RocksDB</span>
         </div>
-        <h3 class="pillar-title">Semantic Knowledge Graph</h3>
+        <h3 class="pillar-title">Knows WHO, WHAT, WHY</h3>
         <div class="pillar-dimensions">
           <span class="dim">WHO</span>
           <span class="dim-dot">·</span>
@@ -387,10 +391,10 @@
           <span class="dim-dot">·</span>
           <span class="dim">WHY</span>
         </div>
-        <p class="pillar-desc">Confidence-scored, provenance-attached semantic reasoning. Every answer carries its evidence chain and trust score — auditable by regulators, actionable by enterprises.</p>
+        <p class="pillar-desc">Semantic knowledge graph. Every fact is confidence-scored and provenance-tracked. No black boxes — every answer carries its full evidence chain, auditable by regulators.</p>
       </div>
 
-      <!-- Pillar 2: Lakehouse -->
+      <!-- Engine 2: LAKEHOUSE -->
       <div class="pillar-card pillar-lake">
         <div class="pillar-header">
           <div class="pillar-icon lake-icon" aria-hidden="true">
@@ -402,13 +406,13 @@
               <rect x="41" y="10" width="3" height="28" rx="1" fill="#4ecdc4" opacity="0.4"/>
             </svg>
           </div>
-          <div class="pillar-tag pillar-tag-teal">LAKEHOUSE</div>
+          <div class="pillar-tag pillar-tag-teal">ENGINE 2: LAKEHOUSE</div>
         </div>
         <div class="pillar-stack">
           <span class="stack-chip stack-chip-teal">DuckDB</span>
-          <span class="stack-chip stack-chip-teal">Iceberg</span>
+          <span class="stack-chip stack-chip-teal">Apache Iceberg</span>
         </div>
-        <h3 class="pillar-title">Analytical Tabular Engine</h3>
+        <h3 class="pillar-title">Knows WHEN, WHERE, HOW MUCH</h3>
         <div class="pillar-dimensions">
           <span class="dim teal-dim">WHEN</span>
           <span class="dim-dot">·</span>
@@ -416,33 +420,31 @@
           <span class="dim-dot">·</span>
           <span class="dim teal-dim">HOW MUCH</span>
         </div>
-        <p class="pillar-desc">High-speed SQL queries over compliance-grade analytics. Data never moves — compute goes to the data. Sub-200ms query times on billion-row datasets.</p>
+        <p class="pillar-desc">Analytical data engine. SQL queries at 127ms. Data never moves — compute goes to the data. Compliance-grade analytics on billion-row datasets without exporting a single byte.</p>
       </div>
 
-      <!-- Pillar 3: Governance -->
+      <!-- Engine 3: GOVERNANCE -->
       <div class="pillar-card pillar-gov">
         <div class="pillar-header">
           <div class="pillar-icon gov-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
-              <rect x="10" y="8" width="28" height="32" rx="3" stroke="#e85d5d" stroke-width="1.5" fill="none" opacity="0.6"/>
-              <line x1="16" y1="18" x2="32" y2="18" stroke="#e85d5d" stroke-width="1.5" opacity="0.8"/>
-              <line x1="16" y1="24" x2="32" y2="24" stroke="#e85d5d" stroke-width="1.5" opacity="0.8"/>
-              <line x1="16" y1="30" x2="26" y2="30" stroke="#e85d5d" stroke-width="1.5" opacity="0.8"/>
-              <circle cx="36" cy="36" r="8" fill="#1a1f2e" stroke="#e85d5d" stroke-width="1.5"/>
-              <path d="M32 36 L35 39 L40 33" stroke="#4ecdc4" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M24 6L40 12v10c0 10-7 18-16 21C15 40 8 32 8 22V12L24 6z" stroke="#e85d5d" stroke-width="1.5" fill="none" opacity="0.5"/>
+              <line x1="16" y1="22" x2="32" y2="22" stroke="#e85d5d" stroke-width="1.5" opacity="0.7"/>
+              <line x1="16" y1="28" x2="32" y2="28" stroke="#e85d5d" stroke-width="1.5" opacity="0.7"/>
+              <path d="M18 30 L22 34 L30 24" stroke="#4ecdc4" stroke-width="2" fill="none" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="pillar-tag pillar-tag-red">GOVERNANCE</div>
+          <div class="pillar-tag pillar-tag-red">ENGINE 3: GOVERNANCE</div>
         </div>
         <div class="pillar-stack">
           <span class="stack-chip stack-chip-red">Sentinel</span>
           <span class="stack-chip stack-chip-red">RegionKit</span>
         </div>
-        <h3 class="pillar-title">Policy as Architecture</h3>
+        <h3 class="pillar-title">Controls WHO MAY SEE WHAT</h3>
         <div class="pillar-dimensions">
           <span class="dim red-dim">WHO MAY SEE WHAT</span>
         </div>
-        <p class="pillar-desc">Machine-executable DPDP compliance. Regulation is embedded in the data flow — not retrofitted as a review process. Every query is compliance-checked before execution.</p>
+        <p class="pillar-desc">Policy as architecture. DPDP compliance is embedded, not bolted on. Every query is compliance-checked before execution. RBI, IRDAI, SEBI rules are machine-executable.</p>
       </div>
     </div>
 
@@ -452,167 +454,94 @@
         <span class="ipc-icon" aria-hidden="true">⟷</span>
         IPC BUS — ZERO-COPY TRANSPORT
       </div>
-      <p class="ipc-desc">Single query interface across all three pillars — one question, three engines, unified answer.</p>
-    </div>
-
-    <!-- Interactive Query Demo -->
-    <div class="query-demo reveal-up" aria-label="Example query demonstration">
-      <div class="query-header">
-        <span class="qdemo-label">EXAMPLE QUERY</span>
-        <span class="qdemo-time" id="query-timer">127ms</span>
-      </div>
-      <div class="query-text">
-        <span class="query-quote">"Show me all high-risk customers in Maharashtra with insurance gaps above 4:1"</span>
-      </div>
-      <div class="query-results">
-        <div class="qr-item">
-          <span class="qr-label">EXECUTION TIME</span>
-          <span class="qr-val qr-amber">127 ms</span>
-        </div>
-        <div class="qr-item">
-          <span class="qr-label">CONFIDENCE</span>
-          <span class="qr-val qr-teal">0.95+ Scored</span>
-        </div>
-        <div class="qr-item">
-          <span class="qr-label">PROVENANCE</span>
-          <span class="qr-val qr-teal">Attached</span>
-        </div>
-        <div class="qr-item">
-          <span class="qr-label">COMPLIANCE</span>
-          <span class="qr-val qr-teal">DPDP Safe</span>
-        </div>
-      </div>
+      <p class="ipc-desc">All three engines talk through a single IPC Bus — zero-copy transport, one query interface. Ask once. All three engines answer in parallel.</p>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 4: INNOVATION — Trust Promotion
+     SECTION 4: SEE IT WORK — From 7 Months to 127ms
 ══════════════════════════════════════════════ -->
-<section class="section innovation-section" id="innovation" aria-label="Trust promotion innovation">
+<section class="section seeit-section" id="seeit" aria-label="See it work — agriculture example">
   <div class="section-label">
     <span class="label-line" aria-hidden="true"></span>
-    <span class="label-text">INNOVATION</span>
+    <span class="label-text">SEE IT WORK</span>
     <span class="label-line" aria-hidden="true"></span>
   </div>
 
   <div class="container">
     <div class="section-header reveal-up">
-      <h2 class="section-title">Trust Promotion Architecture</h2>
-      <p class="section-desc">AI outputs aren't binary — they exist on a confidence spectrum. AdiOS makes that spectrum explicit, auditable, and machine-executable.</p>
+      <h2 class="section-title">From 7 Months to 127 Milliseconds</h2>
+      <p class="section-desc">Let's make this concrete. India's agricultural knowledge is the most compelling example of what AdiOS actually does.</p>
     </div>
 
-    <div class="trust-layout reveal-up">
-      <!-- Confidence score visualization -->
-      <div class="confidence-viz" aria-label="Confidence score tiers">
-        <div class="conf-tier" data-conf="0.70">
-          <div class="conf-bar-wrap">
-            <div class="conf-bar" style="--bar-w:70%" aria-label="70% confidence"></div>
-          </div>
-          <div class="conf-meta">
-            <span class="conf-score">0.70 CONF</span>
-            <span class="conf-badge conf-seed">SeedVault Local</span>
-          </div>
-          <div class="conf-desc">
-            <span class="conf-tier-label">Personal Observation</span>
-            <p class="conf-tier-desc">Raw data from individual field observations. Useful but unvalidated. Flagged for review before enterprise use.</p>
-          </div>
+    <!-- Agriculture setup -->
+    <div class="agri-setup reveal-up">
+      <p class="agri-context">India has <strong>731 KVKs</strong>, <strong>113 ICAR Institutes</strong>, and <strong>15,000+ FPOs</strong> — each generating agricultural knowledge, none connected. A farmer asking about pest resistance in their district has to wait months for a manual answer, if one comes at all.</p>
+    </div>
+
+    <!-- The query demo -->
+    <div class="seeit-layout reveal-up">
+      <!-- Left: The Query -->
+      <div class="seeit-query-block">
+        <div class="seeit-query-label">
+          <span class="seeit-badge seeit-badge-teal">THE QUERY</span>
         </div>
-
-        <div class="conf-arrow" aria-hidden="true">↑ TRUST PROMOTION</div>
-
-        <div class="conf-tier" data-conf="0.85">
-          <div class="conf-bar-wrap">
-            <div class="conf-bar conf-bar-mid" style="--bar-w:85%" aria-label="85% confidence"></div>
+        <div class="seeit-terminal">
+          <div class="seeit-term-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-amber"></span>
+            <span class="dot dot-green"></span>
           </div>
-          <div class="conf-meta">
-            <span class="conf-score">0.85 CONF</span>
-            <span class="conf-badge conf-neural">NeuralMesh Domain</span>
-          </div>
-          <div class="conf-desc">
-            <span class="conf-tier-label">Steward Reviewed</span>
-            <p class="conf-tier-desc">Domain expert has verified the claim. Cross-referenced with institutional sources. Suitable for operational decisions.</p>
-          </div>
-        </div>
-
-        <div class="conf-arrow" aria-hidden="true">↑ TRUST PROMOTION</div>
-
-        <div class="conf-tier active-tier" data-conf="0.95">
-          <div class="conf-bar-wrap">
-            <div class="conf-bar conf-bar-high" style="--bar-w:95%" aria-label="95%+ confidence"></div>
-          </div>
-          <div class="conf-meta">
-            <span class="conf-score">0.95+ CONF</span>
-            <span class="conf-badge conf-enterprise">NeuralMesh Org</span>
-          </div>
-          <div class="conf-desc">
-            <span class="conf-tier-label">Enterprise Truth</span>
-            <p class="conf-tier-desc">Multi-source verified, regulator-auditable, provenance-attached. Cleared for regulated workflows, loan decisions, clinical protocols.</p>
+          <div class="seeit-term-body">
+            <div class="seeit-term-line"><span class="uni-prompt">query@adios:~$</span> ask --sovereign --domain=agriculture</div>
+            <div class="seeit-term-query">"Which cotton varieties showed highest pest resistance in my district over the last 3 monsoons?"</div>
+            <div class="seeit-term-output">
+              <div class="seeit-out-line"><span class="teal-text">ROUTING</span> → Brain (Knowledge Graph) + Lakehouse (3-year sensor data)</div>
+              <div class="seeit-out-line"><span class="teal-text">SOURCES</span> → 47 KVKs · 3 ICAR stations · VISTAAR DPI · 15,000+ FPO records</div>
+              <div class="seeit-out-line"><span class="amber-text">COMPLIANCE</span> → DPDP Safe · Farmer data anonymised · Data never moved</div>
+              <div class="seeit-out-line">
+                <span class="teal-text">RESULT</span> → 
+                <span class="seeit-json">{ "variety": "Bollgard III", "confidence": 0.95, "districts": ["Amravati","Wardha","Yavatmal"], "provenance": "KVK_MH_047+ICAR_NAG_003" }</span>
+              </div>
+              <div class="seeit-out-line seeit-time-line"><span class="amber-text">TIME</span> → <strong class="amber-strong">127ms</strong> &nbsp;<span class="teal-text">CONF</span> → <strong class="teal-strong">0.95+</strong> &nbsp;<span class="teal-text">DPDP</span> → <strong class="teal-strong">✓ SAFE</strong></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Patent claims panel -->
-      <div class="patent-panel" aria-label="Patent claims">
-        <div class="patent-header">
-          <span class="patent-badge">7 INTERLOCKING PATENT CLAIMS</span>
+      <!-- Right: The Comparison -->
+      <div class="seeit-compare-block">
+        <div class="seeit-query-label">
+          <span class="seeit-badge seeit-badge-amber">THE COMPARISON</span>
         </div>
-        <ul class="patent-list" role="list">
-          <li class="patent-item">
-            <span class="patent-num">01</span>
-            <div class="patent-text">
-              <strong>Confidence-Scored Knowledge Graph</strong>
-              <p>Provenance-attached semantic reasoning with machine-executable trust thresholds</p>
-            </div>
-          </li>
-          <li class="patent-item">
-            <span class="patent-num">02</span>
-            <div class="patent-text">
-              <strong>Zero-Copy IPC Transport</strong>
-              <p>Sub-millisecond cross-pillar query routing without data movement</p>
-            </div>
-          </li>
-          <li class="patent-item">
-            <span class="patent-num">03</span>
-            <div class="patent-text">
-              <strong>Policy-Embedded Query Engine</strong>
-              <p>DPDP compliance validation integrated into query execution path</p>
-            </div>
-          </li>
-          <li class="patent-item">
-            <span class="patent-num">04</span>
-            <div class="patent-text">
-              <strong>Trust Promotion Protocol</strong>
-              <p>Automated escalation of evidence confidence through steward review chains</p>
-            </div>
-          </li>
-          <li class="patent-item">
-            <span class="patent-num">05</span>
-            <div class="patent-text">
-              <strong>Sovereign Model Router</strong>
-              <p>Dynamic routing to India-resident AI models based on data sensitivity classification</p>
-            </div>
-          </li>
-          <li class="patent-item">
-            <span class="patent-num">06</span>
-            <div class="patent-text">
-              <strong>Offline-First Knowledge Sync</strong>
-              <p>Federated knowledge replication across air-gapped enterprise nodes</p>
-            </div>
-          </li>
-          <li class="patent-item">
-            <span class="patent-num">07</span>
-            <div class="patent-text">
-              <strong>RegionKit Compliance Engine</strong>
-              <p>Multi-regulation simultaneous compliance mapping for DPDP, RBI, IRDAI, SEBI</p>
-            </div>
-          </li>
-        </ul>
-        <div class="patent-footer">
-          <span class="patent-status">
-            <span class="live-dot live-dot-amber" aria-hidden="true"></span>
-            Patent Applications Pending — India Patent Office
-          </span>
+        <div class="seeit-compare-table" role="table" aria-label="Traditional vs AdiOS comparison">
+          <div class="seeit-compare-row seeit-compare-header" role="row">
+            <div role="columnheader">Metric</div>
+            <div role="columnheader" class="compare-bad-head">Traditional</div>
+            <div role="columnheader" class="compare-good-head">With AdiOS</div>
+          </div>
+          <div class="seeit-compare-row" role="row">
+            <div role="cell" class="compare-metric">Query Time</div>
+            <div role="cell" class="compare-bad">7 Months<br><span class="compare-sub">Manual compilation</span></div>
+            <div role="cell" class="compare-good">127ms<br><span class="compare-sub">Automated sovereign</span></div>
+          </div>
+          <div class="seeit-compare-row" role="row">
+            <div role="cell" class="compare-metric">Compliance</div>
+            <div role="cell" class="compare-bad">3 Weeks<br><span class="compare-sub">Manual legal review</span></div>
+            <div role="cell" class="compare-good">Inline<br><span class="compare-sub">Embedded in query</span></div>
+          </div>
+          <div class="seeit-compare-row" role="row">
+            <div role="cell" class="compare-metric">Breach Surface</div>
+            <div role="cell" class="compare-bad">500+ TB<br><span class="compare-sub">Centralized exposure</span></div>
+            <div role="cell" class="compare-good">0 TB<br><span class="compare-sub">Data never moves</span></div>
+          </div>
+        </div>
+
+        <!-- Big callout -->
+        <div class="impact-callout" aria-label="1.5 million times faster">
+          <div class="impact-num">1.5M<span class="impact-x">×</span></div>
+          <div class="impact-label">FASTER</div>
         </div>
       </div>
     </div>
@@ -620,35 +549,153 @@
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 5: STACK POSITION — The Missing Piece
+     SECTION 5: TRUST ENGINE — How AdiOS Earns Trust
 ══════════════════════════════════════════════ -->
-<section class="section stack-section" id="stack" aria-label="Stack position">
+<section class="section trust-section" id="trust" aria-label="How AdiOS earns trust">
   <div class="section-label">
     <span class="label-line" aria-hidden="true"></span>
-    <span class="label-text">POSITIONING</span>
+    <span class="label-text">TRUST ENGINE</span>
+    <span class="label-line" aria-hidden="true"></span>
+  </div>
+
+  <div class="container">
+    <div class="section-header reveal-up">
+      <h2 class="section-title">How AdiOS Earns Trust</h2>
+      <p class="section-desc">AI outputs aren't binary. They exist on a confidence spectrum. AdiOS makes that spectrum visible, auditable, and machine-executable.</p>
+    </div>
+
+    <div class="trust-layout reveal-up">
+      <!-- Three-step visual -->
+      <div class="trust-steps" aria-label="Trust promotion steps">
+
+        <div class="trust-step trust-step-1">
+          <div class="trust-step-header">
+            <div class="trust-score trust-score-low">0.70</div>
+            <div class="trust-step-meta">
+              <div class="trust-step-name">Step 1 — Personal Observation</div>
+              <div class="trust-step-sub">Your local data</div>
+            </div>
+          </div>
+          <div class="trust-bar-wrap">
+            <div class="trust-bar conf-bar" style="--bar-w:70%" aria-label="70% confidence"></div>
+          </div>
+          <p class="trust-step-desc">Raw data from individual field observations. Useful but unvalidated. Flagged for review before enterprise use.</p>
+          <div class="trust-step-tag">SeedVault Local</div>
+        </div>
+
+        <div class="trust-arrow" aria-hidden="true">
+          <div class="trust-arrow-line"></div>
+          <div class="trust-arrow-label">TRUST PROMOTION ↑</div>
+          <div class="trust-arrow-line"></div>
+        </div>
+
+        <div class="trust-step trust-step-2">
+          <div class="trust-step-header">
+            <div class="trust-score trust-score-mid">0.85</div>
+            <div class="trust-step-meta">
+              <div class="trust-step-name">Step 2 — Domain-Reviewed</div>
+              <div class="trust-step-sub">Your sector experts validated</div>
+            </div>
+          </div>
+          <div class="trust-bar-wrap">
+            <div class="trust-bar conf-bar conf-bar-mid" style="--bar-w:85%" aria-label="85% confidence"></div>
+          </div>
+          <p class="trust-step-desc">Domain expert has verified the claim. Cross-referenced with institutional sources. Suitable for operational decisions.</p>
+          <div class="trust-step-tag trust-tag-mid">NeuralMesh Domain</div>
+        </div>
+
+        <div class="trust-arrow" aria-hidden="true">
+          <div class="trust-arrow-line"></div>
+          <div class="trust-arrow-label">TRUST PROMOTION ↑</div>
+          <div class="trust-arrow-line"></div>
+        </div>
+
+        <div class="trust-step trust-step-3 trust-step-active">
+          <div class="trust-step-header">
+            <div class="trust-score trust-score-high">0.95+</div>
+            <div class="trust-step-meta">
+              <div class="trust-step-name">Step 3 — Enterprise Truth</div>
+              <div class="trust-step-sub">Organisation-wide verified</div>
+            </div>
+          </div>
+          <div class="trust-bar-wrap">
+            <div class="trust-bar conf-bar conf-bar-high" style="--bar-w:95%" aria-label="95%+ confidence"></div>
+          </div>
+          <p class="trust-step-desc">Multi-source verified, regulator-auditable, provenance-attached. Cleared for regulated workflows — loan decisions, clinical protocols, government policy.</p>
+          <div class="trust-step-tag trust-tag-high">NeuralMesh Org</div>
+        </div>
+      </div>
+
+      <!-- Right: key message -->
+      <div class="trust-message">
+        <div class="trust-message-inner">
+          <div class="trust-msg-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M32 4L56 14v16c0 18-10 32-24 36C8 62 8 46 8 30V14L32 4z" stroke="#4ecdc4" stroke-width="1.5" fill="none" opacity="0.4"/>
+              <path d="M32 12L50 19v12c0 13-7 23-18 27C13 54 14 44 14 31V19L32 12z" stroke="#4ecdc4" stroke-width="1" fill="none" opacity="0.3"/>
+              <path d="M22 33 L29 40 L42 24" stroke="#4ecdc4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="trust-msg-title">No Black Boxes.</h3>
+          <p class="trust-msg-text">Every answer comes with a confidence score and full data lineage. Your regulator can trace any AI output back to its source data.</p>
+          <div class="trust-msg-features">
+            <div class="trust-msg-feat">
+              <span class="teal-text">▸</span>
+              <span>Confidence score on every response</span>
+            </div>
+            <div class="trust-msg-feat">
+              <span class="teal-text">▸</span>
+              <span>Full data provenance chain</span>
+            </div>
+            <div class="trust-msg-feat">
+              <span class="teal-text">▸</span>
+              <span>7 interlocking patent claims</span>
+            </div>
+            <div class="trust-msg-feat">
+              <span class="teal-text">▸</span>
+              <span>Regulator-ready audit trail</span>
+            </div>
+          </div>
+          <div class="trust-patent-badge">
+            <span class="live-dot live-dot-amber" aria-hidden="true"></span>
+            7 Patent Applications — India Patent Office
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6: WHERE WE FIT — The Missing Integration Layer
+══════════════════════════════════════════════ -->
+<section class="section stack-section" id="stack" aria-label="Where AdiOS fits in the stack">
+  <div class="section-label">
+    <span class="label-line" aria-hidden="true"></span>
+    <span class="label-text">WHERE WE FIT</span>
     <span class="label-line" aria-hidden="true"></span>
   </div>
 
   <div class="container">
     <div class="section-header reveal-up">
       <h2 class="section-title">The Missing Integration Layer</h2>
-      <p class="section-desc">Between India's compute infrastructure and its regulated applications sits a critical gap. AdiOS is built to fill it.</p>
+      <p class="section-desc">Everyone is building layers above and below. AdiOS is the piece that connects them — with sovereignty and compliance baked in.</p>
     </div>
 
     <div class="stack-diagram reveal-up" aria-label="Architecture stack diagram">
       <!-- Layer: Applications -->
       <div class="stack-layer layer-apps">
-        <div class="layer-label">APPLICATIONS LAYER</div>
+        <div class="layer-label">APPLICATIONS</div>
         <div class="layer-chips">
-          <span class="layer-chip">Loan Processing</span>
+          <span class="layer-chip">Loans</span>
           <span class="layer-chip">Claims</span>
-          <span class="layer-chip">Clinical</span>
           <span class="layer-chip">Agriculture</span>
           <span class="layer-chip">Government</span>
+          <span class="layer-chip">Clinical</span>
         </div>
       </div>
 
-      <!-- AdiOS — The Missing Piece -->
+      <!-- AdiOS — The Missing Piece (highlighted) -->
       <div class="stack-layer layer-adios">
         <div class="layer-label adios-label">
           <span class="adios-badge">◈ ADIOS PLATFORM</span>
@@ -657,230 +704,65 @@
         <div class="layer-chips adios-chips">
           <span class="adios-chip">Brain</span>
           <span class="adios-chip">Lakehouse</span>
-          <span class="adios-chip">Model Router</span>
-          <span class="adios-chip">Compliance Engine</span>
+          <span class="adios-chip">Governance</span>
         </div>
       </div>
 
-      <!-- Layer: Sovereign Models -->
-      <div class="stack-layer layer-models">
-        <div class="layer-label">SOVEREIGN MODELS LAYER</div>
-        <div class="layer-chips">
-          <span class="layer-chip">Sarvam AI</span>
-          <span class="layer-chip">Gnani.ai</span>
-          <span class="layer-chip">Soket Labs</span>
-          <span class="layer-chip">BharatGen</span>
-          <span class="layer-chip">Bhashini</span>
+      <!-- Below layers in a condensed 2-column grid -->
+      <div class="stack-below-grid">
+        <!-- Layer: Sovereign Models -->
+        <div class="stack-layer layer-models">
+          <div class="layer-label">SOVEREIGN MODELS</div>
+          <div class="layer-chips">
+            <span class="layer-chip">Sarvam AI</span>
+            <span class="layer-chip">Gnani.ai</span>
+            <span class="layer-chip">BharatGen</span>
+            <span class="layer-chip">Bhashini</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Layer: Compute -->
-      <div class="stack-layer layer-compute">
-        <div class="layer-label">COMPUTE INFRASTRUCTURE LAYER</div>
-        <div class="layer-chips">
-          <span class="layer-chip">IndiaAI (38k GPUs)</span>
-          <span class="layer-chip">Meghdoot</span>
-          <span class="layer-chip">Yotta</span>
-          <span class="layer-chip">E2E Networks</span>
+        <!-- Layer: Compute -->
+        <div class="stack-layer layer-compute">
+          <div class="layer-label">COMPUTE</div>
+          <div class="layer-chips">
+            <span class="layer-chip">IndiaAI (38k GPUs)</span>
+            <span class="layer-chip">Yotta</span>
+            <span class="layer-chip">E2E Networks</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Layer: Regulation -->
-      <div class="stack-layer layer-regulation">
-        <div class="layer-label">REGULATION &amp; POLICY LAYER</div>
-        <div class="layer-chips">
-          <span class="layer-chip">DPDP Act</span>
-          <span class="layer-chip">RBI Data Loc.</span>
-          <span class="layer-chip">IRDAI</span>
-          <span class="layer-chip">SEBI</span>
-          <span class="layer-chip">BCBS239</span>
+        <!-- Layer: Regulation -->
+        <div class="stack-layer layer-regulation">
+          <div class="layer-label">REGULATION</div>
+          <div class="layer-chips">
+            <span class="layer-chip">DPDP Act</span>
+            <span class="layer-chip">RBI Data Loc.</span>
+            <span class="layer-chip">IRDAI</span>
+            <span class="layer-chip">SEBI</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Layer: DPI -->
-      <div class="stack-layer layer-dpi">
-        <div class="layer-label">DPI FOUNDATIONS LAYER</div>
-        <div class="layer-chips">
-          <span class="layer-chip">Aadhaar</span>
-          <span class="layer-chip">UPI</span>
-          <span class="layer-chip">DigiLocker</span>
-          <span class="layer-chip">VISTAAR</span>
-          <span class="layer-chip">ONDC</span>
+        <!-- Layer: DPI -->
+        <div class="stack-layer layer-dpi">
+          <div class="layer-label">DPI FOUNDATIONS</div>
+          <div class="layer-chips">
+            <span class="layer-chip">Aadhaar</span>
+            <span class="layer-chip">UPI</span>
+            <span class="layer-chip">DigiLocker</span>
+            <span class="layer-chip">ONDC</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="stack-caption reveal-up">
-      <p>AdiOS sits above India's sovereign compute fabric and below regulated applications — providing the integration, trust, and compliance layer that neither side can deliver alone.</p>
+      <p>Everyone is building the layers above and below. AdiOS is the missing piece that connects them — the integration, trust, and compliance layer that neither side can deliver alone.</p>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 6: IMPACT — 7 Months → 127ms
-══════════════════════════════════════════════ -->
-<section class="section impact-section" id="impact" aria-label="Impact metrics">
-  <div class="section-label">
-    <span class="label-line" aria-hidden="true"></span>
-    <span class="label-text">IMPACT</span>
-    <span class="label-line" aria-hidden="true"></span>
-  </div>
-
-  <div class="container">
-    <div class="section-header reveal-up">
-      <h2 class="section-title">From 7 Months to 127 Milliseconds</h2>
-      <p class="section-desc">Sovereign AI that moves at the speed of intelligence — not the speed of compliance review cycles.</p>
-    </div>
-
-    <div class="impact-big reveal-up" aria-label="1.5 million times faster">
-      <div class="impact-num">1.5M<span class="impact-x">X</span></div>
-      <div class="impact-label">FASTER</div>
-    </div>
-
-    <div class="comparison-table reveal-up" role="table" aria-label="Traditional vs AdiOS comparison">
-      <div class="table-header" role="row">
-        <div class="th" role="columnheader">METRIC</div>
-        <div class="th th-traditional" role="columnheader">Traditional Approach</div>
-        <div class="th th-adios" role="columnheader">With AdiOS</div>
-      </div>
-
-      <div class="table-row" role="row">
-        <div class="td td-metric" role="cell">
-          <span class="metric-icon" aria-hidden="true">⏱</span>
-          Query Time
-        </div>
-        <div class="td td-bad" role="cell">
-          <span class="bad-val">7 Months</span>
-          <span class="bad-note">Manual compilation, human review</span>
-        </div>
-        <div class="td td-good" role="cell">
-          <span class="good-val">127 Milliseconds</span>
-          <span class="good-note">Automated sovereign query</span>
-        </div>
-      </div>
-
-      <div class="table-row" role="row">
-        <div class="td td-metric" role="cell">
-          <span class="metric-icon" aria-hidden="true">✓</span>
-          Compliance
-        </div>
-        <div class="td td-bad" role="cell">
-          <span class="bad-val">3 Weeks</span>
-          <span class="bad-note">Manual legal review cycle</span>
-        </div>
-        <div class="td td-good" role="cell">
-          <span class="good-val">Automated &amp; Inline</span>
-          <span class="good-note">Embedded in query execution</span>
-        </div>
-      </div>
-
-      <div class="table-row" role="row">
-        <div class="td td-metric" role="cell">
-          <span class="metric-icon" aria-hidden="true">⊘</span>
-          Breach Surface
-        </div>
-        <div class="td td-bad" role="cell">
-          <span class="bad-val">500+ TB</span>
-          <span class="bad-note">Centralized, exposed data movement</span>
-        </div>
-        <div class="td td-good" role="cell">
-          <span class="good-val">0 TB</span>
-          <span class="good-note">Data never moves — compute travels</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     SECTION 7: USE CASE — Agriculture Spotlight
-══════════════════════════════════════════════ -->
-<section class="section usecase-section" id="usecase" aria-label="Agriculture use case">
-  <div class="section-label">
-    <span class="label-line" aria-hidden="true"></span>
-    <span class="label-text">USE CASE SPOTLIGHT</span>
-    <span class="label-line" aria-hidden="true"></span>
-  </div>
-
-  <div class="container">
-    <div class="usecase-header reveal-up">
-      <div class="usecase-tag">
-        <span class="use-icon" aria-hidden="true">◉</span>
-        Agriculture Intelligence
-      </div>
-      <h2 class="section-title">Unifying India's Agricultural Knowledge Fabric</h2>
-      <p class="section-desc">India's agricultural intelligence is scattered across hundreds of institutions — none speaking to each other. AdiOS speaks to all of them at once.</p>
-    </div>
-
-    <div class="usecase-layout reveal-up">
-      <!-- Fragmented reality -->
-      <div class="usecase-fragmented">
-        <div class="frag-header">
-          <span class="frag-badge frag-before">BEFORE ADIOS</span>
-          <span class="frag-title">Fragmented Reality</span>
-        </div>
-        <div class="frag-nodes" aria-label="Fragmented knowledge sources">
-          <div class="frag-node">
-            <span class="frag-num">731</span>
-            <span class="frag-label">KVKs</span>
-            <span class="frag-sublabel">Krishi Vigyan Kendras</span>
-          </div>
-          <div class="frag-connector" aria-hidden="true">✕</div>
-          <div class="frag-node">
-            <span class="frag-num">113</span>
-            <span class="frag-label">ICAR Institutes</span>
-            <span class="frag-sublabel">Research centers</span>
-          </div>
-          <div class="frag-connector" aria-hidden="true">✕</div>
-          <div class="frag-node">
-            <span class="frag-num">15,000+</span>
-            <span class="frag-label">FPOs</span>
-            <span class="frag-sublabel">Farmer Producer Orgs</span>
-          </div>
-        </div>
-        <p class="frag-desc">Each institution operates a silo. A soil health question requires contacting dozens of KVKs manually. The answer arrives — if ever — in weeks.</p>
-        <div class="frag-result frag-result-bad">
-          <span>Query time: <strong>7 months</strong> (if answered at all)</span>
-        </div>
-      </div>
-
-      <!-- AdiOS unified query -->
-      <div class="usecase-unified">
-        <div class="uni-header">
-          <span class="frag-badge frag-after">WITH ADIOS</span>
-          <span class="frag-title">Unified Query</span>
-        </div>
-        <div class="uni-terminal">
-          <div class="uni-term-bar">
-            <span class="dot dot-red"></span>
-            <span class="dot dot-amber"></span>
-            <span class="dot dot-green"></span>
-          </div>
-          <div class="uni-term-body">
-            <div class="uni-term-line"><span class="uni-prompt">query@adios:~$</span> ask --sovereign --domain=agriculture</div>
-            <div class="uni-term-line uni-term-query">"Which districts in Vidarbha show pest pressure above threshold for kharif cotton, based on KVK sensor data from the last 14 days?"</div>
-            <div class="uni-term-output">
-              <div class="uni-out-line"><span class="teal-text">ROUTING</span> → Brain (Knowledge Graph) + Lakehouse (Sensor Data)</div>
-              <div class="uni-out-line"><span class="teal-text">SOURCES</span> → 47 KVKs · 3 ICAR stations · VISTAAR DPI</div>
-              <div class="uni-out-line"><span class="amber-text">COMPLIANCE</span> → DPDP Safe · Farmer data anonymised</div>
-              <div class="uni-out-line">
-                <span class="teal-text">RESULT</span> → 
-                <span class="uni-json">{ "districts": ["Amravati", "Yavatmal", "Wardha"], "confidence": 0.93, "provenance": "KVK_MH_047...", "advisory": "Immediate spray window: 72h" }</span>
-              </div>
-              <div class="uni-out-line"><span class="amber-text">TIME</span> → 127ms &nbsp;<span class="teal-text">CONF</span> → 0.93</div>
-            </div>
-          </div>
-        </div>
-        <div class="frag-result frag-result-good">
-          <span>Query time: <strong>127 milliseconds</strong> · Confidence-scored · DPDP Safe</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     SECTION 8: BUSINESS MODEL — Four Revenue Streams
+     SECTION 7: BUSINESS MODEL — Four Ways to Grow
 ══════════════════════════════════════════════ -->
 <section class="section business-section" id="business" aria-label="Business model">
   <div class="section-label">
@@ -891,7 +773,7 @@
 
   <div class="container">
     <div class="section-header reveal-up">
-      <h2 class="section-title">Four Revenue Streams, One Flywheel</h2>
+      <h2 class="section-title">Four Ways to Grow</h2>
       <p class="section-desc">Infrastructure pricing for regulated enterprises — predictable, scalable, sovereignty-aligned.</p>
     </div>
 
@@ -913,7 +795,7 @@
           <span class="rev-arrow" aria-hidden="true">→</span>
           <span class="rev-tier rev-tier-mid">₹2.5K/mo</span>
           <span class="rev-arrow" aria-hidden="true">→</span>
-          <span class="rev-tier rev-tier-top">Custom</span>
+          <span class="rev-tier rev-tier-top">Enterprise</span>
         </div>
       </div>
 
@@ -930,8 +812,8 @@
         </div>
         <div class="rev-num">02</div>
         <h3 class="rev-title">Model Router</h3>
-        <p class="rev-desc">Cloud API access to sovereign model orchestration with automatic routing to optimal India-resident LLMs.</p>
-        <div class="rev-detail">Cloud API + 15% Margin on inference</div>
+        <p class="rev-desc">15% margin on sovereign model API calls — AdiOS routes queries to the optimal India-resident LLM automatically.</p>
+        <div class="rev-detail">15% margin on inference</div>
       </div>
 
       <!-- Stream 3: Marketplace -->
@@ -946,8 +828,8 @@
         </div>
         <div class="rev-num">03</div>
         <h3 class="rev-title">Marketplace</h3>
-        <p class="rev-desc">Revenue share from model, data, agent, and compliance module listings — curated for India's regulated sectors.</p>
-        <div class="rev-detail">15–20% Revenue Share per transaction</div>
+        <p class="rev-desc">Revenue share from models, data, agent, and compliance module listings — curated for India's regulated sectors.</p>
+        <div class="rev-detail">15–20% revenue share per transaction</div>
       </div>
 
       <!-- Stream 4: Compliance -->
@@ -959,7 +841,7 @@
           </svg>
         </div>
         <div class="rev-num">04</div>
-        <h3 class="rev-title">Compliance Modules</h3>
+        <h3 class="rev-title">Compliance</h3>
         <p class="rev-desc">Per-regulation subscription modules — DPDP, RBI, IRDAI, SEBI — with automatic policy updates as regulations evolve.</p>
         <div class="rev-detail">Per-regulation subscription</div>
       </div>
@@ -998,12 +880,13 @@
           <path d="M60,80 A110,110 0 0,1 135,42" fill="none" stroke="#d4a843" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
         </svg>
       </div>
+      <p class="flywheel-desc">More usage generates more intelligence. More intelligence creates more value. More value attracts more participants. The flywheel accelerates with every query.</p>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 9: MARKETPLACE PREVIEW — Coming Soon
+     SECTION 8: MARKETPLACE — Coming Soon
 ══════════════════════════════════════════════ -->
 <section class="section marketplace-section" id="marketplace" aria-label="Marketplace preview">
   <div class="container">
@@ -1013,7 +896,7 @@
         SOVEREIGN AI MARKETPLACE
         <span class="mp-soon-tag">COMING SOON</span>
       </div>
-      <h2 class="mp-title">Browse. Deploy. Stay Sovereign.</h2>
+      <h2 class="mp-title">Browse and Deploy Sovereign AI.</h2>
       <p class="mp-desc">The first marketplace where every listing is confidence-scored and provenance-tracked. Models, data, agents, and compliance modules — all certified for India's regulated enterprises.</p>
 
       <div class="mp-categories" aria-label="Marketplace categories">
@@ -1062,14 +945,14 @@
       </div>
 
       <div class="mp-cta">
-        <a href="#waitlist" class="btn-primary">Join Marketplace Waitlist</a>
+        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 10: WAITLIST — Request Boot Access
+     SECTION 9: REQUEST BOOT ACCESS — Waitlist Form
 ══════════════════════════════════════════════ -->
 <section class="section waitlist-section" id="waitlist" aria-label="Request boot access">
   <div class="container">
@@ -1080,8 +963,8 @@
           <span class="live-dot" aria-hidden="true"></span>
           NOW ACCEPTING EARLY ACCESS
         </div>
-        <h2 class="wl-title">Request Boot Access</h2>
-        <p class="wl-desc">Be among the first enterprises to boot sovereign. Priority access for BFSI, Government, and Agriculture decision-makers.</p>
+        <h2 class="wl-title">Ready to Boot Sovereign?</h2>
+        <p class="wl-desc">Join the enterprises building on India's first sovereign AI operating system. Priority access for BFSI, Government, and Agriculture decision-makers.</p>
 
         <div class="wl-features">
           <div class="wl-feat">
@@ -1090,7 +973,7 @@
           </div>
           <div class="wl-feat">
             <span class="wl-feat-icon teal-text" aria-hidden="true">▸</span>
-            <span>Architecture walkthrough with Malay Baral</span>
+            <span>Architecture walkthrough with Malay Baral, Founder</span>
           </div>
           <div class="wl-feat">
             <span class="wl-feat-icon teal-text" aria-hidden="true">▸</span>
@@ -1193,7 +1076,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════
-     SECTION 11: FOOTER
+     SECTION 10: FOOTER
 ══════════════════════════════════════════════ -->
 <footer class="footer" id="footer" aria-label="Footer">
   <div class="container">
@@ -1230,10 +1113,10 @@
           <h4 class="footer-nav-title">Platform</h4>
           <ul class="footer-nav-list" role="list">
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Architecture</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Brain Engine</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Lakehouse</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Governance</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">IPC Bus</a></li>
+            <li><a href="#solution" class="footer-nav-link">Brain Engine</a></li>
+            <li><a href="#solution" class="footer-nav-link">Lakehouse</a></li>
+            <li><a href="#solution" class="footer-nav-link">Governance</a></li>
+            <li><a href="#solution" class="footer-nav-link">IPC Bus</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
@@ -1241,7 +1124,7 @@
           <ul class="footer-nav-list" role="list">
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Financial Services</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Government</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Agriculture</a></li>
+            <li><a href="#seeit" class="footer-nav-link">Agriculture</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Healthcare</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Manufacturing</a></li>
           </ul>
@@ -1264,7 +1147,6 @@
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Careers</a></li>
             <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Investors</a></li>
             <li><a href="mailto:contact@adiosplat.io" class="footer-nav-link">Contact</a></li>
-            <li><a href="#" class="footer-nav-link coming-soon" data-soon="true">Blog</a></li>
           </ul>
         </div>
       </div>
@@ -1319,17 +1201,17 @@
     <div class="modal-body">
       <p class="modal-date">Last updated: March 21, 2026</p>
       <h3>Data We Collect</h3>
-      <p>AdiOS Platform Private Limited collects only the information you voluntarily provide through our waitlist form: name, email address, company, role, and sector interest. This data is held in-session memory and is not transmitted to any external server at this time.</p>
-      <h3>How We Use Your Information</h3>
-      <p>Your information is used solely to contact you regarding early access to AdiOS Platform and to prioritise demo scheduling. We do not sell, share, or monetise your personal information.</p>
-      <h3>Data Localization</h3>
-      <p>In alignment with the DPDP Act 2023, all personal data collected from Indian residents is processed and stored within India. No data is transferred to foreign servers.</p>
-      <h3>Cookies</h3>
-      <p>This website uses only essential cookies to remember your cookie consent preference. No analytics, advertising, or third-party tracking cookies are used.</p>
+      <p>AdiOS Platform Private Limited collects only the information you voluntarily provide through our waitlist and newsletter forms: your name, work email, company name, role, and sector interest. No tracking pixels, no third-party analytics, no behavioural data collection.</p>
+      <h3>How We Use It</h3>
+      <p>Your information is used solely to contact you about AdiOS Platform early access, product updates, and relevant sovereign AI insights. We do not sell, share, or transfer your data to third parties.</p>
+      <h3>Data Storage</h3>
+      <p>Form submissions are stored in your browser's local storage on your device. We do not transmit your data to external servers at this time. When we connect to our CRM, we will update this policy accordingly.</p>
+      <h3>DPDP Act Compliance</h3>
+      <p>AdiOS Platform is fully committed to compliance with India's Digital Personal Data Protection Act, 2023. Your data is processed only with your consent and for the purposes stated above.</p>
       <h3>Your Rights</h3>
-      <p>Under the DPDP Act 2023, you have the right to access, correct, and erase your personal data. To exercise these rights, contact us at <a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a>.</p>
+      <p>You may request correction or deletion of your data at any time by contacting us at <a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a>.</p>
       <h3>Contact</h3>
-      <p>AdiOS Platform Private Limited<br>Hyderabad, Telangana, India<br>CIN: U58201TS2026PTC211867<br><a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a></p>
+      <p>AdiOS Platform Private Limited, Hyderabad, Telangana, India. Email: <a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a></p>
     </div>
   </div>
 </div>
@@ -1344,18 +1226,18 @@
     </div>
     <div class="modal-body">
       <p class="modal-date">Last updated: March 21, 2026</p>
-      <h3>Acceptance of Terms</h3>
-      <p>By accessing this website and submitting a waitlist request, you agree to these Terms of Service. These terms govern your use of the AdiOS Platform website and early access programme.</p>
-      <h3>Early Access Programme</h3>
-      <p>Submitting a waitlist request does not guarantee access to AdiOS Platform. We reserve the right to select early access participants based on enterprise profile, sector alignment, and capacity. All demonstrations are confidential and subject to NDA upon scheduling.</p>
+      <h3>Acceptance</h3>
+      <p>By accessing the AdiOS Platform portal and submitting a waitlist request, you agree to these Terms of Service. This is a pre-launch portal for informational purposes and early access registration.</p>
+      <h3>Use of Information</h3>
+      <p>Information submitted via forms on this portal is used to communicate about AdiOS Platform products and services. You acknowledge that the platform is in pre-launch stage and that timelines, features, and pricing are subject to change.</p>
       <h3>Intellectual Property</h3>
-      <p>All content on this website — including architecture descriptions, patent claim summaries, product names (Brain, Lakehouse, Governance, SeedVault, NeuralMesh, Sentinel, RegionKit), and visual designs — is proprietary to AdiOS Platform Private Limited. Reproduction requires written consent.</p>
-      <h3>Limitation of Liability</h3>
-      <p>This website is provided for informational purposes. AdiOS Platform Private Limited makes no warranties regarding the accuracy of forward-looking statements about product capabilities or timelines.</p>
+      <p>All content on this portal, including the AdiOS Platform name, logo, architecture descriptions, and patent claim summaries, is the property of AdiOS Platform Private Limited. Patent applications are pending with the India Patent Office.</p>
+      <h3>No Warranties</h3>
+      <p>This portal is provided "as is" for informational purposes. AdiOS Platform makes no warranties regarding availability, accuracy, or fitness for a particular purpose of the pre-launch portal.</p>
       <h3>Governing Law</h3>
-      <p>These terms are governed by the laws of India. Any disputes shall be subject to the jurisdiction of courts in Hyderabad, Telangana.</p>
+      <p>These terms are governed by the laws of India. Disputes shall be subject to the exclusive jurisdiction of courts in Hyderabad, Telangana.</p>
       <h3>Contact</h3>
-      <p><a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a> · +91 77620 06300</p>
+      <p>AdiOS Platform Private Limited. CIN: U58201TS2026PTC211867. Email: <a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a></p>
     </div>
   </div>
 </div>
@@ -1370,18 +1252,20 @@
     </div>
     <div class="modal-body">
       <p class="modal-date">Last updated: March 21, 2026</p>
-      <h3>Cookies We Use</h3>
-      <p>AdiOS Platform uses only one cookie: <code>adios_cookie_consent</code>. This stores your acceptance of this cookie notice for 365 days. No third-party cookies, analytics trackers, or advertising pixels are used on this website.</p>
-      <h3>Session Storage</h3>
-      <p>Your waitlist form submission is held in session memory during your visit. This data never leaves your device via this website. It may be transferred to our CRM system (Zoho CRM) when you provide consent during the demo scheduling process.</p>
-      <h3>Managing Cookies</h3>
-      <p>You can clear all cookies through your browser settings at any time. This will reset your cookie consent preference.</p>
+      <h3>Our Cookie Approach</h3>
+      <p>AdiOS Platform uses no tracking cookies, no third-party analytics, and no advertising pixels. We use only in-memory browser state to remember that you've accepted this notice and to temporarily store your waitlist submission before processing.</p>
+      <h3>What We Store</h3>
+      <ul>
+        <li><strong>adios_cookie_consent</strong> — Records that you've accepted this notice. Stored in session memory.</li>
+        <li><strong>adios_waitlist</strong> — Temporarily stores your waitlist submission in session memory. Cleared when processed.</li>
+      </ul>
+      <h3>No Third-Party Tracking</h3>
+      <p>We do not use Google Analytics, Facebook Pixel, or any third-party tracking tools on this portal. Your browsing behaviour is entirely private.</p>
+      <h3>Contact</h3>
+      <p>Questions about our data practices? Email <a href="mailto:contact@adiosplat.io">contact@adiosplat.io</a></p>
     </div>
   </div>
 </div>
-
-<!-- "Coming Soon" tooltip (injected) -->
-<div class="tooltip-cs" id="cs-tooltip" role="tooltip" aria-hidden="true">Coming Soon</div>
 
 <script src="app.js"></script>
 </body>

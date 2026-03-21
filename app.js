@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initSidebarScrollSpy();
   initNewsletterForm();
+  initCounterAnimation();
 });
 
 /* ══════════════════════════════════════════════
@@ -386,7 +387,8 @@ function initScrollReveal() {
    CONFIDENCE BAR ANIMATIONS
 ══════════════════════════════════════════════ */
 function initConfidenceBars() {
-  const bars = document.querySelectorAll('.conf-bar');
+  // Animate both .conf-bar (old) and .trust-bar (new section)
+  const bars = document.querySelectorAll('.conf-bar, .trust-bar');
   if (!bars.length) return;
 
   const io = new IntersectionObserver((entries) => {
@@ -639,25 +641,24 @@ function initNewsletterForm() {
 /* ══════════════════════════════════════════════
    IMPACT COUNTER ANIMATION
 ══════════════════════════════════════════════ */
-(function initCounters() {
-  const impactEl = document.querySelector('.impact-num');
-  if (!impactEl) return;
+function initCounterAnimation() {
+  // Animate all .impact-num elements (including .impact-callout variant)
+  const impactEls = document.querySelectorAll('.impact-num');
+  if (!impactEls.length) return;
 
-  let animated = false;
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-        // Subtle flash effect on the number
-        entry.target.style.transition = 'text-shadow 0.3s';
-        entry.target.style.textShadow = '0 0 120px rgba(212,168,67,0.5)';
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.style.transition = 'text-shadow 0.3s';
+        el.style.textShadow = '0 0 120px rgba(212,168,67,0.5)';
         setTimeout(() => {
-          entry.target.style.textShadow = '0 0 80px rgba(212,168,67,0.25)';
+          el.style.textShadow = '0 0 80px rgba(212,168,67,0.25)';
         }, 600);
-        io.unobserve(entry.target);
+        io.unobserve(el);
       }
     });
   }, { threshold: 0.5 });
 
-  io.observe(impactEl);
-})();
+  impactEls.forEach(el => io.observe(el));
+}
