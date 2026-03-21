@@ -1375,3 +1375,652 @@ function initNewsletterForm() {
     }
   });
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CHARTS & ANIMATED EXPLAINERS — v1.0
+   Hero counters, Gap diagram, Adoption bars, Engine flow,
+   Comparison charts, India map, Market chart, TAM donut
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Utility: easing ──────────────────────────────────────── */
+function easeOutExpo(t) {
+  return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+}
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
+}
+
+/* ── Utility: animate a numeric counter ───────────────────── */
+function animateCounter(el, from, to, duration, format, onComplete) {
+  const start = performance.now();
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutExpo(progress);
+    const value = from + (to - from) * eased;
+    el.textContent = format(value);
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = format(to);
+      if (onComplete) onComplete();
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   1. HERO COUNTER RIBBON
+═══════════════════════════════════════════════════════════ */
+function initCounterRibbon() {
+  const ribbon = document.getElementById('counter-ribbon');
+  if (!ribbon) return;
+
+  const items = ribbon.querySelectorAll('.counter-item');
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+
+        // Animate counter items in
+        items.forEach((item, i) => {
+          setTimeout(() => {
+            item.classList.add('counter-visible');
+          }, i * 180);
+        });
+
+        // Market: $0B → $126B
+        const marketEl = document.getElementById('ctr-market-val');
+        if (marketEl) {
+          setTimeout(() => {
+            animateCounter(marketEl, 0, 126, 2200, v => '$' + Math.round(v) + 'B');
+          }, 200);
+        }
+
+        // GPUs: 0 → 200,000
+        const gpuEl = document.getElementById('ctr-gpu-val');
+        if (gpuEl) {
+          setTimeout(() => {
+            animateCounter(gpuEl, 0, 200000, 2400, v => {
+              return Math.round(v).toLocaleString('en-IN');
+            });
+          }, 400);
+        }
+
+        // Growth: 1× → 6.5× with burst
+        const growthEl = document.getElementById('ctr-growth-val');
+        if (growthEl) {
+          setTimeout(() => {
+            animateCounter(growthEl, 1, 6.5, 2000, v => v.toFixed(1) + '×', () => {
+              growthEl.classList.add('burst-active');
+              setTimeout(() => growthEl.classList.remove('burst-active'), 400);
+            });
+          }, 600);
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  io.observe(ribbon);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2. GAP DIAGRAM — AdiOS slides in to fill the gap
+═══════════════════════════════════════════════════════════ */
+function initGapDiagram() {
+  const wrapper = document.getElementById('gap-diagram');
+  if (!wrapper) return;
+
+  const adiosBlock = document.getElementById('adios-gap-block');
+  const lineIds = ['adios-line-tl','adios-line-tr','adios-line-bl','adios-line-br'];
+  let triggered = false;
+
+  // Initial state
+  if (adiosBlock) {
+    adiosBlock.style.opacity = '0';
+    adiosBlock.style.transform = 'scaleX(0)';
+    adiosBlock.style.transition = 'none';
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+
+        // Delay then animate AdiOS block in
+        setTimeout(() => {
+          if (adiosBlock) {
+            adiosBlock.style.transition = 'opacity 0.5s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)';
+            adiosBlock.style.opacity = '1';
+            adiosBlock.style.transform = 'scaleX(1)';
+          }
+        }, 800);
+
+        // Show connection lines after block appears
+        setTimeout(() => {
+          lineIds.forEach((id, i) => {
+            const line = document.getElementById(id);
+            if (line) {
+              setTimeout(() => {
+                line.style.transition = 'opacity 0.4s ease';
+                line.style.opacity = '0.6';
+              }, i * 100);
+            }
+          });
+        }, 1400);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  io.observe(wrapper);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   3. ADOPTION BAR CHART
+═══════════════════════════════════════════════════════════ */
+function initAdoptionChart() {
+  const chart = document.getElementById('adoption-chart');
+  if (!chart) return;
+
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+
+        // Animate bar 1: 87%
+        const bar1 = document.getElementById('adopt-bar-1');
+        if (bar1) {
+          setTimeout(() => { bar1.style.width = '87%'; }, 200);
+        }
+        // Bar 2 stays at 0 (red) — dramatic effect
+        const bar2 = document.getElementById('adopt-bar-2');
+        if (bar2) {
+          // Flash red briefly
+          setTimeout(() => {
+            bar2.style.width = '3%';
+            setTimeout(() => { bar2.style.width = '0%'; }, 600);
+          }, 800);
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  io.observe(chart);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   4. ENGINE FLOW — Engine pulse effects + pill animations
+═══════════════════════════════════════════════════════════ */
+function initEngineFlowDiagram() {
+  const wrapper = document.getElementById('engine-flow');
+  if (!wrapper) return;
+
+  // The SVG animate elements handle the dot travel automatically.
+  // Add pulsing glow to engine circles based on dot position.
+  const engines = [
+    { id: 'engine-brain', color: '#d4a843', delay: 750 },
+    { id: 'engine-lake',  color: '#4ecdc4', delay: 1500 },
+    { id: 'engine-gov',   color: '#e85d5d', delay: 2250 },
+  ];
+
+  engines.forEach(({ id, color, delay }) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    setInterval(() => {
+      el.style.transition = 'filter 0.25s ease, opacity 0.25s ease';
+      el.style.filter = `drop-shadow(0 0 12px ${color})`;
+      el.style.opacity = '1';
+      setTimeout(() => {
+        el.style.filter = '';
+        el.style.opacity = '0.85';
+      }, 400);
+    }, 3000);
+    // Stagger the start
+    setTimeout(() => {
+      el.style.filter = `drop-shadow(0 0 12px ${color})`;
+      el.style.opacity = '1';
+      setTimeout(() => { el.style.filter = ''; el.style.opacity = '0.85'; }, 400);
+    }, delay);
+  });
+
+  // Animate the metric pills with cycling numbers
+  const lakeEl = document.getElementById('lake-time');
+  if (lakeEl) {
+    const times = ['127ms','124ms','131ms','127ms','129ms','127ms'];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % times.length;
+      lakeEl.textContent = times[idx];
+    }, 2200);
+  }
+
+  const brainEl = document.getElementById('brain-conf');
+  if (brainEl) {
+    const confs = ['0.95+','0.97','0.94','0.96','0.95+'];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % confs.length;
+      brainEl.textContent = confs[idx];
+    }, 2800);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   5. SEEIT COMPARISON CHARTS
+═══════════════════════════════════════════════════════════ */
+function initSeeItCharts() {
+  const container = document.getElementById('seeit-charts');
+  if (!container) return;
+
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+        animateSeeItCharts();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  io.observe(container);
+}
+
+function animateSeeItCharts() {
+  // Bar 1: Traditional (slow red)
+  const tradBar = document.getElementById('speed-bar-trad');
+  if (tradBar) {
+    setTimeout(() => { tradBar.style.width = '95%'; }, 200);
+  }
+
+  // Bar 2: AdiOS (instant tiny green)
+  const adiosBar = document.getElementById('speed-bar-adios');
+  if (adiosBar) {
+    setTimeout(() => { adiosBar.style.width = '0.8%'; }, 2600);
+  }
+
+  // Donut charts
+  setTimeout(() => {
+    // Traditional: full red ring (289 = 2*PI*46 ≈ circumference)
+    const donutTrad = document.getElementById('donut-trad');
+    if (donutTrad) {
+      donutTrad.style.transition = 'stroke-dasharray 1.4s cubic-bezier(0.4,0,0.2,1)';
+      donutTrad.setAttribute('stroke-dasharray', '289 0');
+    }
+
+    // AdiOS: stays at 0, but stroke the outline with minimal dash
+    const donutAdios = document.getElementById('donut-adios');
+    if (donutAdios) {
+      donutAdios.style.transition = 'stroke-dasharray 0.5s ease';
+      donutAdios.setAttribute('stroke-dasharray', '2 287');
+      setTimeout(() => {
+        const check = document.getElementById('donut-check');
+        if (check) check.classList.add('check-show');
+      }, 600);
+    }
+  }, 400);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   6. INDIA MAP — Hover interactions
+═══════════════════════════════════════════════════════════ */
+function initIndiaMap() {
+  const mapSvg = document.getElementById('india-map-svg');
+  const tooltip = document.getElementById('map-tooltip');
+  if (!mapSvg || !tooltip) return;
+
+  const dotGroups = mapSvg.querySelectorAll('.map-dot-group');
+  const connectionLines = document.getElementById('map-connection-lines');
+  const adiosLabel = document.getElementById('map-adios-label');
+
+  dotGroups.forEach(group => {
+    const label = group.getAttribute('data-label') || '';
+    const type = group.getAttribute('data-type') || '';
+    const colors = { kvk: '#d4a843', icar: '#4ecdc4', fpo: '#e85d5d' };
+    const color = colors[type] || '#d4a843';
+
+    group.style.cursor = 'pointer';
+
+    group.addEventListener('mouseenter', (e) => {
+      tooltip.style.opacity = '1';
+      tooltip.style.color = color;
+      tooltip.textContent = label + ' — Unified by AdiOS';
+
+      // Show connections
+      if (connectionLines) {
+        connectionLines.style.transition = 'opacity 0.3s ease';
+        connectionLines.style.opacity = '1';
+      }
+      if (adiosLabel) {
+        adiosLabel.style.opacity = '1';
+      }
+    });
+
+    group.addEventListener('mousemove', (e) => {
+      const rect = mapSvg.getBoundingClientRect();
+      tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+      tooltip.style.top  = (e.clientY - rect.top  - 28) + 'px';
+    });
+
+    group.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = '0';
+      if (connectionLines) {
+        connectionLines.style.opacity = '0';
+      }
+      if (adiosLabel) {
+        adiosLabel.style.opacity = '0';
+      }
+    });
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   7. MARKET GROWTH LINE CHART (Canvas)
+═══════════════════════════════════════════════════════════ */
+function initMarketGrowthChart() {
+  const canvas = document.getElementById('market-growth-canvas');
+  const wrapper = document.getElementById('market-chart-wrapper');
+  if (!canvas || !wrapper) return;
+
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+        drawMarketChart(canvas);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  io.observe(wrapper);
+}
+
+function drawMarketChart(canvas) {
+  // Data points: [year, value in $B]
+  const data = [
+    { year: 2020, val: 2.97, label: '$2.97B' },
+    { year: 2022, val: 4.8,  label: '$4.8B' },
+    { year: 2024, val: 7.6,  label: '$7.6B' },
+    { year: 2025, val: 11,   label: '$11B' },
+    { year: 2026, val: 17,   label: '$17B', marker: true },
+    { year: 2028, val: 55,   label: '$55B' },
+    { year: 2030, val: 126,  label: '$126B' },
+  ];
+
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.parentElement.offsetWidth || 800;
+  const H = 200;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const pad = { top: 20, right: 30, bottom: 40, left: 55 };
+  const w = W - pad.left - pad.right;
+  const h = H - pad.top  - pad.bottom;
+
+  const minYear = 2020, maxYear = 2030;
+  const minVal = 0, maxVal = 135;
+
+  function xp(year) { return pad.left + (year - minYear) / (maxYear - minYear) * w; }
+  function yp(val)  { return pad.top  + h - (val - minVal) / (maxVal - minVal) * h; }
+
+  // Animate the line drawing
+  let progress = 0;
+  const duration = 2000;
+  const startTime = performance.now();
+
+  function frame(now) {
+    const elapsed = now - startTime;
+    progress = Math.min(easeInOutCubic(elapsed / duration), 1);
+
+    ctx.clearRect(0, 0, W, H);
+
+    // Grid lines
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 1;
+    [0, 25, 50, 75, 100, 125].forEach(v => {
+      ctx.beginPath();
+      ctx.moveTo(pad.left, yp(v));
+      ctx.lineTo(W - pad.right, yp(v));
+      ctx.stroke();
+    });
+
+    // Y axis labels
+    ctx.fillStyle = 'rgba(232,230,227,0.4)';
+    ctx.font = '10px JetBrains Mono, monospace';
+    ctx.textAlign = 'right';
+    [0, 25, 50, 75, 100, 125].forEach(v => {
+      ctx.fillText('$' + v + 'B', pad.left - 6, yp(v) + 4);
+    });
+
+    // X axis labels
+    ctx.textAlign = 'center';
+    data.forEach(d => {
+      ctx.fillText(d.year, xp(d.year), H - pad.bottom + 16);
+    });
+
+    // Determine points to draw based on progress
+    // Build partial path
+    const totalPoints = data.length;
+    const drawCount = progress * (totalPoints - 1);
+
+    // Build filled path (gradient area)
+    const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + h);
+    grad.addColorStop(0, 'rgba(78,205,196,0.25)');
+    grad.addColorStop(1, 'rgba(78,205,196,0)');
+
+    ctx.beginPath();
+    ctx.moveTo(xp(data[0].year), yp(data[0].val));
+
+    for (let i = 1; i < totalPoints; i++) {
+      const frac = i - 1; // segment index
+      if (frac >= drawCount) break;
+      const segProgress = Math.min(drawCount - frac, 1);
+      const px = xp(data[i-1].year) + (xp(data[i].year) - xp(data[i-1].year)) * segProgress;
+      const py = yp(data[i-1].val)  + (yp(data[i].val)  - yp(data[i-1].val))  * segProgress;
+      ctx.lineTo(px, py);
+    }
+
+    // Close path for fill
+    const lastDrawnIdx = Math.min(Math.floor(drawCount), totalPoints - 2);
+    const segP = Math.min(drawCount - lastDrawnIdx, 1);
+    const lastX = xp(data[lastDrawnIdx].year) + (xp(data[lastDrawnIdx+1].year) - xp(data[lastDrawnIdx].year)) * segP;
+
+    ctx.lineTo(lastX, pad.top + h);
+    ctx.lineTo(xp(data[0].year), pad.top + h);
+    ctx.closePath();
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Draw the line on top
+    ctx.beginPath();
+    ctx.moveTo(xp(data[0].year), yp(data[0].val));
+    for (let i = 1; i < totalPoints; i++) {
+      const frac = i - 1;
+      if (frac >= drawCount) break;
+      const segProgress = Math.min(drawCount - frac, 1);
+      const px = xp(data[i-1].year) + (xp(data[i].year) - xp(data[i-1].year)) * segProgress;
+      const py = yp(data[i-1].val)  + (yp(data[i].val)  - yp(data[i-1].val))  * segProgress;
+      ctx.lineTo(px, py);
+    }
+    ctx.strokeStyle = '#4ecdc4';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+
+    // Data point dots
+    data.forEach((d, i) => {
+      const dotProgress = Math.min(drawCount - (i - 1), 1);
+      if (i === 0 || dotProgress > 0) {
+        const alpha = i === 0 ? 1 : Math.max(0, dotProgress);
+        ctx.beginPath();
+        ctx.arc(xp(d.year), yp(d.val), 4, 0, Math.PI * 2);
+        ctx.fillStyle = d.marker ? '#f0c84a' : '#4ecdc4';
+        ctx.globalAlpha = alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+
+        // Label on final frame
+        if (progress >= 1 && (d.year === 2024 || d.year === 2030 || d.year === 2026)) {
+          ctx.fillStyle = d.marker ? '#f0c84a' : 'rgba(232,230,227,0.7)';
+          ctx.font = d.year === 2030 ? 'bold 11px JetBrains Mono, monospace' : '10px JetBrains Mono, monospace';
+          ctx.textAlign = 'center';
+          ctx.fillText(d.label, xp(d.year), yp(d.val) - 10);
+        }
+      }
+    });
+
+    // AdiOS entry marker (2026)
+    if (progress >= 0.7) {
+      const x2026 = xp(2026);
+      const markerAlpha = Math.min((progress - 0.7) / 0.3, 1);
+      ctx.globalAlpha = markerAlpha;
+
+      // Vertical dashed line
+      ctx.beginPath();
+      ctx.setLineDash([4, 3]);
+      ctx.moveTo(x2026, pad.top);
+      ctx.lineTo(x2026, pad.top + h);
+      ctx.strokeStyle = '#f0c84a';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Label
+      ctx.fillStyle = '#f0c84a';
+      ctx.font = 'bold 9px JetBrains Mono, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('AdiOS', x2026, pad.top + 12);
+      ctx.fillText('enters →', x2026, pad.top + 24);
+
+      ctx.globalAlpha = 1;
+    }
+
+    if (progress < 1) requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   8. GPU PROGRESS BAR
+═══════════════════════════════════════════════════════════ */
+function initGpuProgressBar() {
+  const wrapper = document.getElementById('gpu-progress');
+  if (!wrapper) return;
+
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+
+        // Animate fill to ~19% (38000/200000)
+        const fill = document.getElementById('gpu-bar-fill');
+        if (fill) {
+          setTimeout(() => { fill.style.width = '19%'; }, 300);
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  io.observe(wrapper);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   9. TAM DONUT CHART
+═══════════════════════════════════════════════════════════ */
+function initTamDonut() {
+  const wrapper = document.getElementById('tam-chart');
+  if (!wrapper) return;
+
+  // circumference = 2 * PI * 90 ≈ 565.5
+  const CIRC = 2 * Math.PI * 90;
+  // Enterprise: 71/126 = 56.3% → 318.4
+  const enterpriseDash = CIRC * (71 / 126);
+  // Consumer: 55/126 = 43.7% → 247.1
+  const consumerDash = CIRC * (55 / 126);
+  // AdiOS target: ~20% overlay
+  const adiosDash = CIRC * 0.20;
+
+  let triggered = false;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        io.disconnect();
+        animateTamDonut(CIRC, enterpriseDash, consumerDash, adiosDash);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  io.observe(wrapper);
+}
+
+function animateTamDonut(CIRC, entDash, consDash, adiosDash) {
+  const segEnt  = document.getElementById('tam-seg-enterprise');
+  const segCons = document.getElementById('tam-seg-consumer');
+  const segAdios = document.getElementById('tam-seg-adios');
+
+  if (!segEnt || !segCons) return;
+
+  // Enterprise segment (amber) — starts from 0 position
+  setTimeout(() => {
+    segEnt.style.transition = 'stroke-dasharray 1.2s cubic-bezier(0.4,0,0.2,1)';
+    segEnt.setAttribute('stroke-dasharray', entDash + ' ' + (CIRC - entDash));
+    // offset: 0 (starts at top)
+    segEnt.setAttribute('stroke-dashoffset', '0');
+  }, 200);
+
+  // Consumer segment (teal) — offset so it starts after enterprise
+  setTimeout(() => {
+    segCons.style.transition = 'stroke-dasharray 1s cubic-bezier(0.4,0,0.2,1)';
+    // The consumer segment starts where enterprise ends
+    // dashoffset = -(enterprise arc length) so it appears right after
+    const offset = -(entDash);
+    segCons.setAttribute('stroke-dasharray', consDash + ' ' + (CIRC - consDash));
+    segCons.setAttribute('stroke-dashoffset', offset.toString());
+  }, 700);
+
+  // AdiOS highlight ring (amber glow) — on top of both
+  setTimeout(() => {
+    if (segAdios) {
+      segAdios.style.transition = 'stroke-dasharray 0.8s ease, opacity 0.5s ease';
+      segAdios.setAttribute('stroke-dasharray', adiosDash + ' ' + (CIRC - adiosDash));
+      segAdios.setAttribute('stroke-dashoffset', (-entDash * 0.3).toString()); // centered on enterprise
+      segAdios.style.opacity = '0.9';
+    }
+  }, 1800);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INIT ALL CHARTS
+═══════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  initCounterRibbon();
+  initGapDiagram();
+  initAdoptionChart();
+  initEngineFlowDiagram();
+  initSeeItCharts();
+  initIndiaMap();
+  initMarketGrowthChart();
+  initGpuProgressBar();
+  initTamDonut();
+});

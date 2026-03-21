@@ -260,6 +260,27 @@
       </div>
     </div>
   </div>
+
+  <!-- ── ANIMATED COUNTER RIBBON ────────────────────────────── -->
+  <div class="counter-ribbon" id="counter-ribbon" aria-label="India AI market statistics">
+    <div class="counter-ribbon-inner">
+      <div class="counter-item" id="ctr-market">
+        <span class="counter-value" id="ctr-market-val">$0B</span>
+        <span class="counter-label">India's AI Market by 2030</span>
+        <span class="counter-sub">42% CAGR · Google–Inc42 Bharat AI Report</span>
+      </div>
+      <div class="counter-item" id="ctr-gpu">
+        <span class="counter-value" id="ctr-gpu-val">0</span>
+        <span class="counter-label">GPU Deployment Target</span>
+        <span class="counter-sub">IndiaAI Mission · ₹10,372 Cr Budget</span>
+      </div>
+      <div class="counter-item" id="ctr-growth">
+        <span class="counter-value" id="ctr-growth-val">1×</span>
+        <span class="counter-label">Enterprise AI Growth by 2030</span>
+        <span class="counter-sub">$11B → $71B · NASSCOM 2025</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
@@ -329,6 +350,127 @@
         <p class="story-card-desc">RBI, IRDAI, SEBI rules are ignored by generic platforms. Compliance is retrofitted as a 3-week manual review cycle — making real-time AI operationally impossible.</p>
         <div class="story-card-tag story-tag-red">3-Week Review Cycles</div>
       </div>
+    </div>
+
+    <!-- ── GAP DIAGRAM ─────────────────────────────────────── -->
+    <div class="gap-diagram-wrapper reveal-up" id="gap-diagram" aria-label="AdiOS gap diagram">
+      <div class="gap-diagram-title">The Architecture Gap AdiOS Fills</div>
+      <div class="gap-svg-container">
+        <svg viewBox="0 0 760 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Applications layer above, Infrastructure layer below, AdiOS filling the gap">
+          <!-- BACKGROUND LAYERS -->
+          <rect x="0" y="0" width="760" height="100" rx="8" fill="rgba(78,205,196,0.05)" stroke="rgba(78,205,196,0.15)" stroke-width="1"/>
+          <text x="14" y="22" fill="rgba(78,205,196,0.6)" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" letter-spacing="2">APPLICATIONS LAYER</text>
+
+          <rect x="0" y="180" width="760" height="100" rx="8" fill="rgba(212,168,67,0.05)" stroke="rgba(212,168,67,0.15)" stroke-width="1"/>
+          <text x="14" y="202" fill="rgba(212,168,67,0.6)" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" letter-spacing="2">INFRASTRUCTURE LAYER</text>
+
+          <!-- APPLICATION ICONS (floating) -->
+          <!-- Banking -->
+          <g class="gap-app-icon" style="transform-origin:95px 55px">
+            <rect x="72" y="32" width="46" height="46" rx="10" fill="rgba(78,205,196,0.1)" stroke="rgba(78,205,196,0.4)" stroke-width="1.2"/>
+            <text x="95" y="52" text-anchor="middle" fill="#4ecdc4" font-size="14">🏦</text>
+            <text x="95" y="72" text-anchor="middle" fill="rgba(232,230,227,0.6)" font-family="JetBrains Mono, monospace" font-size="8.5">Banking</text>
+          </g>
+          <!-- Agriculture -->
+          <g class="gap-app-icon" style="transform-origin:240px 55px; animation-delay:0.5s">
+            <rect x="217" y="32" width="46" height="46" rx="10" fill="rgba(78,205,196,0.1)" stroke="rgba(78,205,196,0.4)" stroke-width="1.2"/>
+            <text x="240" y="52" text-anchor="middle" fill="#4ecdc4" font-size="14">🌾</text>
+            <text x="240" y="72" text-anchor="middle" fill="rgba(232,230,227,0.6)" font-family="JetBrains Mono, monospace" font-size="8.5">Agriculture</text>
+          </g>
+          <!-- Healthcare -->
+          <g class="gap-app-icon" style="transform-origin:520px 55px; animation-delay:1s">
+            <rect x="497" y="32" width="46" height="46" rx="10" fill="rgba(78,205,196,0.1)" stroke="rgba(78,205,196,0.4)" stroke-width="1.2"/>
+            <text x="520" y="52" text-anchor="middle" fill="#4ecdc4" font-size="14">🏥</text>
+            <text x="520" y="72" text-anchor="middle" fill="rgba(232,230,227,0.6)" font-family="JetBrains Mono, monospace" font-size="8.5">Healthcare</text>
+          </g>
+          <!-- Government -->
+          <g class="gap-app-icon" style="transform-origin:665px 55px; animation-delay:1.5s">
+            <rect x="642" y="32" width="46" height="46" rx="10" fill="rgba(78,205,196,0.1)" stroke="rgba(78,205,196,0.4)" stroke-width="1.2"/>
+            <text x="665" y="52" text-anchor="middle" fill="#4ecdc4" font-size="14">🏛️</text>
+            <text x="665" y="72" text-anchor="middle" fill="rgba(232,230,227,0.6)" font-family="JetBrains Mono, monospace" font-size="8.5">Government</text>
+          </g>
+
+          <!-- INFRASTRUCTURE ICONS -->
+          <!-- GPUs -->
+          <g>
+            <rect x="72" y="207" width="46" height="36" rx="6" fill="rgba(212,168,67,0.1)" stroke="rgba(212,168,67,0.35)" stroke-width="1.2"/>
+            <text x="95" y="220" text-anchor="middle" fill="#d4a843" font-size="10">⬛</text>
+            <text x="95" y="235" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7.5">38K GPUs</text>
+            <text x="95" y="254" text-anchor="middle" fill="rgba(232,230,227,0.35)" font-family="JetBrains Mono, monospace" font-size="7">IndiaAI Mission</text>
+          </g>
+          <!-- Models -->
+          <g>
+            <rect x="240" y="207" width="46" height="36" rx="6" fill="rgba(212,168,67,0.1)" stroke="rgba(212,168,67,0.35)" stroke-width="1.2"/>
+            <text x="263" y="220" text-anchor="middle" fill="#d4a843" font-size="10">🧠</text>
+            <text x="263" y="235" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7.5">Sarvam</text>
+            <text x="263" y="254" text-anchor="middle" fill="rgba(232,230,227,0.35)" font-family="JetBrains Mono, monospace" font-size="7">BharatGen</text>
+          </g>
+          <!-- Data Centers -->
+          <g>
+            <rect x="497" y="207" width="46" height="36" rx="6" fill="rgba(212,168,67,0.1)" stroke="rgba(212,168,67,0.35)" stroke-width="1.2"/>
+            <text x="520" y="220" text-anchor="middle" fill="#d4a843" font-size="10">🗄️</text>
+            <text x="520" y="235" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7.5">600 Data Labs</text>
+            <text x="520" y="254" text-anchor="middle" fill="rgba(232,230,227,0.35)" font-family="JetBrains Mono, monospace" font-size="7">Yotta · E2E</text>
+          </g>
+          <!-- Networks -->
+          <g>
+            <rect x="642" y="207" width="46" height="36" rx="6" fill="rgba(212,168,67,0.1)" stroke="rgba(212,168,67,0.35)" stroke-width="1.2"/>
+            <text x="665" y="220" text-anchor="middle" fill="#d4a843" font-size="10">📡</text>
+            <text x="665" y="235" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7.5">Networks</text>
+            <text x="665" y="254" text-anchor="middle" fill="rgba(232,230,227,0.35)" font-family="JetBrains Mono, monospace" font-size="7">5G · Fiber</text>
+          </g>
+
+          <!-- THE GAP / MIDDLE ZONE -->
+          <!-- Dotted line before AdiOS -->
+          <line class="gap-dot-line" id="gap-line-before" x1="20" y1="140" x2="310" y2="140"
+            stroke="rgba(232,230,227,0.25)" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <!-- Question marks -->
+          <text class="gap-question" x="120" y="147" text-anchor="middle" fill="rgba(232,83,83,0.7)" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700">?</text>
+          <text class="gap-question" x="200" y="144" text-anchor="middle" fill="rgba(232,83,83,0.5)" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" style="animation-delay:0.8s">?</text>
+          <text class="gap-question" x="270" y="148" text-anchor="middle" fill="rgba(232,83,83,0.6)" font-family="JetBrains Mono, monospace" font-size="17" font-weight="700" style="animation-delay:1.6s">?</text>
+
+          <!-- AdiOS fills the gap (center) -->
+          <g id="adios-gap-block" style="transform-origin:380px 140px" class="adios-gap-hidden">
+            <rect x="320" y="115" width="120" height="50" rx="10"
+              fill="rgba(212,168,67,0.15)" stroke="#d4a843" stroke-width="1.8"/>
+            <text x="380" y="136" text-anchor="middle" fill="#d4a843" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" letter-spacing="1">AdiOS</text>
+            <text x="380" y="152" text-anchor="middle" fill="rgba(232,230,227,0.7)" font-family="JetBrains Mono, monospace" font-size="8.5">Sovereign AI OS</text>
+          </g>
+          <!-- Connection lines from AdiOS to apps -->
+          <line id="adios-line-tl" x1="380" y1="115" x2="95" y2="78" stroke="rgba(212,168,67,0.25)" stroke-width="1" stroke-dasharray="4 4" opacity="0"/>
+          <line id="adios-line-tr" x1="380" y1="115" x2="665" y2="78" stroke="rgba(212,168,67,0.25)" stroke-width="1" stroke-dasharray="4 4" opacity="0"/>
+          <line id="adios-line-bl" x1="380" y1="165" x2="95" y2="207" stroke="rgba(212,168,67,0.25)" stroke-width="1" stroke-dasharray="4 4" opacity="0"/>
+          <line id="adios-line-br" x1="380" y1="165" x2="665" y2="207" stroke="rgba(212,168,67,0.25)" stroke-width="1" stroke-dasharray="4 4" opacity="0"/>
+
+          <!-- Dotted line after AdiOS -->
+          <line class="gap-dot-line" id="gap-line-after" x1="440" y1="140" x2="740" y2="140"
+            stroke="rgba(78,205,196,0.35)" stroke-width="1.5" stroke-dasharray="6 5" style="animation-delay:0.5s"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── ADOPTION CHART ─────────────────────────────────────── -->
+    <div class="adoption-chart reveal-up" id="adoption-chart" aria-label="AI adoption statistics">
+      <div class="adoption-chart-title">Enterprise AI Adoption — The Paradox</div>
+      <div class="adoption-bar-row">
+        <div class="adoption-bar-label">
+          <span>87% of Indian enterprises actively using AI</span>
+          <span class="adoption-bar-pct" style="color:#4ecdc4">87%</span>
+        </div>
+        <div class="adoption-bar-track">
+          <div class="adoption-bar-fill bar-teal" id="adopt-bar-1" data-target="87"></div>
+        </div>
+      </div>
+      <div class="adoption-bar-row">
+        <div class="adoption-bar-label">
+          <span>Enterprises with a Sovereign AI OS</span>
+          <span class="adoption-bar-pct" style="color:#e85d5d">0%</span>
+        </div>
+        <div class="adoption-bar-track">
+          <div class="adoption-bar-fill bar-red" id="adopt-bar-2" data-target="0"></div>
+        </div>
+      </div>
+      <div class="adoption-source">Source: NASSCOM AI Adoption Index 2025 · India AI Score: 2.45/4</div>
     </div>
 
     <!-- Bottom line -->
@@ -449,6 +591,89 @@
       </div>
     </div>
 
+    <!-- ── ENGINE FLOW DIAGRAM ─────────────────────────────────── -->
+    <div class="engine-flow-wrapper reveal-up" id="engine-flow" aria-label="Query flow through the three engines">
+      <div class="engine-flow-title">Live Query Flow — Watch a Query Travel Through AdiOS</div>
+      <div class="engine-flow-svg-container">
+        <svg id="engine-flow-svg" viewBox="0 0 860 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated query flow from input through Brain, Lakehouse, Governance engines to verified answer">
+          <defs>
+            <filter id="glow-amber"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+            <filter id="glow-teal"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+            <filter id="glow-red"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+          </defs>
+
+          <!-- Flow path line -->
+          <path id="flow-path" d="M40 65 L200 65 L210 65 L420 65 L430 65 L640 65 L650 65 L820 65"
+            stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+
+          <!-- INPUT node -->
+          <circle cx="40" cy="65" r="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+          <text x="40" y="69" text-anchor="middle" fill="rgba(232,230,227,0.7)" font-family="JetBrains Mono, monospace" font-size="8" font-weight="600">IN</text>
+          <text x="40" y="90" text-anchor="middle" fill="rgba(232,230,227,0.4)" font-family="JetBrains Mono, monospace" font-size="8">Query</text>
+
+          <!-- Connector line 1 -->
+          <line x1="54" y1="65" x2="178" y2="65" stroke="rgba(212,168,67,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+          <!-- ENGINE 1: BRAIN (amber) -->
+          <circle id="engine-brain" cx="210" cy="65" r="32" fill="rgba(212,168,67,0.08)" stroke="#d4a843" stroke-width="1.8"/>
+          <text x="210" y="60" text-anchor="middle" fill="#d4a843" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">BRAIN</text>
+          <text x="210" y="73" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7">Knowledge</text>
+          <text x="210" y="84" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7">Graph</text>
+
+          <!-- Connector line 2 -->
+          <line x1="242" y1="65" x2="388" y2="65" stroke="rgba(78,205,196,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+          <!-- ENGINE 2: LAKEHOUSE (teal) -->
+          <circle id="engine-lake" cx="420" cy="65" r="32" fill="rgba(78,205,196,0.08)" stroke="#4ecdc4" stroke-width="1.8"/>
+          <text x="420" y="60" text-anchor="middle" fill="#4ecdc4" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">LAKE</text>
+          <text x="420" y="73" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7">Analytical</text>
+          <text x="420" y="84" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7">Engine</text>
+
+          <!-- Connector line 3 -->
+          <line x1="452" y1="65" x2="608" y2="65" stroke="rgba(232,93,93,0.3)" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+          <!-- ENGINE 3: GOVERNANCE (red) -->
+          <circle id="engine-gov" cx="640" cy="65" r="32" fill="rgba(232,93,93,0.08)" stroke="#e85d5d" stroke-width="1.8"/>
+          <text x="640" y="60" text-anchor="middle" fill="#e85d5d" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700">GOVERN</text>
+          <text x="640" y="73" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7">Policy +</text>
+          <text x="640" y="84" text-anchor="middle" fill="rgba(232,230,227,0.55)" font-family="JetBrains Mono, monospace" font-size="7">DPDP</text>
+
+          <!-- Connector line 4 -->
+          <line x1="672" y1="65" x2="796" y2="65" stroke="rgba(78,205,196,0.4)" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+          <!-- OUTPUT node -->
+          <circle cx="820" cy="65" r="20" fill="rgba(78,205,196,0.1)" stroke="#4ecdc4" stroke-width="1.8"/>
+          <text x="820" y="61" text-anchor="middle" fill="#4ecdc4" font-family="JetBrains Mono, monospace" font-size="7" font-weight="700">VERIFIED</text>
+          <text x="820" y="72" text-anchor="middle" fill="#4ecdc4" font-family="JetBrains Mono, monospace" font-size="7" font-weight="700">ANSWER</text>
+          <text x="820" y="93" text-anchor="middle" fill="rgba(78,205,196,0.6)" font-family="JetBrains Mono, monospace" font-size="8">127ms</text>
+
+          <!-- Animated travel dot -->
+          <circle id="flow-travel-dot" cx="40" cy="65" r="5" fill="#d4a843" opacity="0">
+            <animate attributeName="cx" values="40;200;210;420;430;640;650;820" keyTimes="0;0.22;0.25;0.47;0.5;0.72;0.75;1" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0;1;1;1;1;1;1;0" keyTimes="0;0.05;0.1;0.47;0.5;0.72;0.75;0.95;1" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="fill" values="#d4a843;#d4a843;#d4a843;#4ecdc4;#4ecdc4;#e85d5d;#e85d5d;#4ecdc4" keyTimes="0;0.22;0.25;0.47;0.5;0.72;0.75;1" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="5;5;7;7;7;7;7;5" keyTimes="0;0.22;0.25;0.47;0.5;0.72;0.75;1" dur="3s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+
+      <!-- Engine metric pills -->
+      <div class="engine-counter-pills">
+        <div class="engine-pill pill-amber">
+          <span class="engine-pill-dot"></span>
+          Brain — Confidence: <span class="pill-val" id="brain-conf">0.95+</span>
+        </div>
+        <div class="engine-pill pill-teal">
+          <span class="engine-pill-dot"></span>
+          Lakehouse — Query: <span class="pill-val" id="lake-time">127ms</span>
+        </div>
+        <div class="engine-pill pill-red">
+          <span class="engine-pill-dot"></span>
+          Governance — DPDP: <span class="pill-val" id="gov-status">Compliant ✓</span>
+        </div>
+      </div>
+    </div>
+
     <!-- IPC Bus -->
     <div class="ipc-bus reveal-up" aria-label="IPC Bus architecture">
       <div class="ipc-label">
@@ -546,6 +771,219 @@
         </div>
       </div>
     </div>
+
+    <!-- ── INTERACTIVE COMPARISON CHARTS ───────────────────────── -->
+    <div class="viz-grid reveal-up" id="seeit-charts">
+
+      <!-- CHART 1: Speed comparison bar -->
+      <div class="viz-card">
+        <div class="viz-card-title">Query Speed Comparison</div>
+        <div class="h-bar-chart">
+          <div class="h-bar-row">
+            <div class="h-bar-meta">
+              <span>Traditional Process</span>
+              <span class="h-bar-val" style="color:#e85d5d">7 months</span>
+            </div>
+            <div class="h-bar-track">
+              <div class="h-bar-fill red-bar" id="speed-bar-trad" data-target="95" title="Traditional: 7 months"></div>
+            </div>
+          </div>
+          <div class="h-bar-row">
+            <div class="h-bar-meta">
+              <span>With AdiOS</span>
+              <span class="h-bar-val" style="color:#4ecdc4">127ms</span>
+            </div>
+            <div class="h-bar-track">
+              <div class="h-bar-fill green-bar" id="speed-bar-adios" data-target="0.8" title="AdiOS: 127ms"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-source">Source: AdiOS benchmark · India Agri Knowledge Graph 2025</div>
+      </div>
+
+      <!-- CHART 2: Data breach surface donut -->
+      <div class="viz-card">
+        <div class="viz-card-title">Data Breach Exposure Surface</div>
+        <div class="donut-chart-container" id="donut-container">
+          <div class="donut-pair">
+            <svg class="donut-svg" viewBox="0 0 120 120" role="img" aria-label="Traditional: 500+ TB breach surface">
+              <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
+              <circle class="donut-ring" id="donut-trad" cx="60" cy="60" r="46"
+                fill="none" stroke="#e85d5d" stroke-width="14"
+                stroke-dasharray="0 289" transform="rotate(-90 60 60)"
+                stroke-linecap="round"/>
+              <text x="60" y="56" text-anchor="middle" fill="#e85d5d" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700">500+</text>
+              <text x="60" y="70" text-anchor="middle" fill="rgba(232,230,227,0.5)" font-family="JetBrains Mono,monospace" font-size="8">TB exposed</text>
+            </svg>
+            <div class="donut-val red-val">Traditional</div>
+            <div class="donut-label">Centralized cloud<br>data movement</div>
+          </div>
+          <div class="donut-pair">
+            <svg class="donut-svg" viewBox="0 0 120 120" role="img" aria-label="AdiOS: 0 TB breach surface">
+              <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"/>
+              <circle class="donut-ring" id="donut-adios" cx="60" cy="60" r="46"
+                fill="none" stroke="#4ecdc4" stroke-width="14"
+                stroke-dasharray="0 289" transform="rotate(-90 60 60)"
+                stroke-linecap="round"/>
+              <text x="60" y="56" text-anchor="middle" fill="#4ecdc4" font-family="JetBrains Mono,monospace" font-size="13" font-weight="700" id="donut-zero">0</text>
+              <text x="60" y="70" text-anchor="middle" fill="rgba(232,230,227,0.5)" font-family="JetBrains Mono,monospace" font-size="8">TB exposed</text>
+            </svg>
+            <div class="donut-val green-val">AdiOS</div>
+            <div class="donut-label">Data stays in place<br><span class="donut-check" id="donut-check">✓ Sovereign</span></div>
+          </div>
+        </div>
+        <div class="chart-source">Source: DPDP Act compliance framework 2025 · AdiOS zero-movement architecture</div>
+      </div>
+
+      <!-- CHART 3: India Agriculture Network Map -->
+      <div class="viz-card viz-card-full">
+        <div class="viz-card-title">India's Agricultural Knowledge Network — Unified by AdiOS</div>
+        <div class="india-map-wrapper">
+          <div id="map-tooltip" class="map-tooltip"></div>
+          <svg class="india-map-svg" viewBox="0 0 500 520" fill="none" xmlns="http://www.w3.org/2000/svg" id="india-map-svg" role="img" aria-label="India map showing KVK, ICAR and FPO nodes connected by AdiOS">
+            <!-- India outline (simplified) -->
+            <path d="M185 30 L210 28 L240 32 L265 38 L285 50 L300 62 L310 78 L318 92 L320 108 L315 122 L308 136
+                     L330 145 L345 158 L355 175 L360 192 L358 210 L350 228 L340 245 L325 260
+                     L310 278 L295 298 L278 318 L262 338 L250 355 L240 370 L232 382 L228 392
+                     L224 400 L220 408 L215 415 L210 420 L206 415 L200 405 L196 395 L192 384
+                     L188 370 L183 355 L178 340 L173 325 L167 308 L160 290 L153 272 L147 255
+                     L143 238 L140 220 L137 202 L134 185 L131 168 L128 150 L126 133 L126 116
+                     L128 99 L133 84 L142 70 L154 57 L165 46 L175 37 Z"
+              fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"
+              stroke-linejoin="round"/>
+            <!-- Kashmir region -->
+            <path d="M185 30 L195 20 L215 15 L235 18 L250 25 L260 32 L265 38 L240 32 L210 28 Z"
+              fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <!-- Northeast -->
+            <path d="M308 136 L320 130 L335 128 L350 132 L362 142 L368 155 L360 162 L348 158 L335 152 L322 148 L310 140 Z"
+              fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+            <!-- KVK nodes (amber, 731 total) - representative positions -->
+            <g id="kvk-nodes">
+              <!-- Punjab/Haryana region -->
+              <g class="map-dot-group" data-type="kvk" data-label="Punjab KVKs · 32 stations">
+                <circle class="map-pulse-ring" cx="188" cy="72" r="8" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="188" cy="72" r="4" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <g class="map-dot-group" data-type="kvk" data-label="Haryana KVKs · 22 stations">
+                <circle class="map-pulse-ring" cx="205" cy="82" r="8" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="205" cy="82" r="4" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- UP region -->
+              <g class="map-dot-group" data-type="kvk" data-label="UP KVKs · 75 stations">
+                <circle class="map-pulse-ring" cx="238" cy="110" r="10" fill="#d4a843" opacity="0.2"/>
+                <circle class="map-dot-pulse" cx="238" cy="110" r="5" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- MP region -->
+              <g class="map-dot-group" data-type="kvk" data-label="MP KVKs · 52 stations">
+                <circle class="map-pulse-ring" cx="220" cy="175" r="9" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="220" cy="175" r="4.5" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- Maharashtra region -->
+              <g class="map-dot-group" data-type="kvk" data-label="Maharashtra KVKs · 43 stations">
+                <circle class="map-pulse-ring" cx="210" cy="230" r="9" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="210" cy="230" r="4.5" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- AP/Telangana -->
+              <g class="map-dot-group" data-type="kvk" data-label="AP/Telangana KVKs · 38 stations">
+                <circle class="map-pulse-ring" cx="228" cy="295" r="9" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="228" cy="295" r="4.5" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- TN -->
+              <g class="map-dot-group" data-type="kvk" data-label="Tamil Nadu KVKs · 31 stations">
+                <circle class="map-pulse-ring" cx="215" cy="370" r="8" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="215" cy="370" r="4" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- Gujarat -->
+              <g class="map-dot-group" data-type="kvk" data-label="Gujarat KVKs · 27 stations">
+                <circle class="map-pulse-ring" cx="160" cy="195" r="8" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="160" cy="195" r="4" fill="#d4a843" opacity="0.9"/>
+              </g>
+              <!-- Bihar -->
+              <g class="map-dot-group" data-type="kvk" data-label="Bihar KVKs · 38 stations">
+                <circle class="map-pulse-ring" cx="270" cy="140" r="9" fill="#d4a843" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="270" cy="140" r="4.5" fill="#d4a843" opacity="0.9"/>
+              </g>
+            </g>
+
+            <!-- ICAR nodes (teal, 113 total) -->
+            <g id="icar-nodes">
+              <g class="map-dot-group" data-type="icar" data-label="ICAR NAG Nagpur · Hub Institute">
+                <circle class="map-pulse-ring" cx="232" cy="200" r="12" fill="#4ecdc4" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="232" cy="200" r="6" fill="#4ecdc4" opacity="0.95"/>
+              </g>
+              <g class="map-dot-group" data-type="icar" data-label="IARI New Delhi · Premier Institute">
+                <circle class="map-pulse-ring" cx="208" cy="90" r="12" fill="#4ecdc4" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="208" cy="90" r="6" fill="#4ecdc4" opacity="0.95"/>
+              </g>
+              <g class="map-dot-group" data-type="icar" data-label="ICAR Hyderabad · South Region Hub">
+                <circle class="map-pulse-ring" cx="238" cy="268" r="11" fill="#4ecdc4" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="238" cy="268" r="5.5" fill="#4ecdc4" opacity="0.95"/>
+              </g>
+              <g class="map-dot-group" data-type="icar" data-label="ICAR Coimbatore · Sugarcane Research">
+                <circle class="map-pulse-ring" cx="205" cy="350" r="10" fill="#4ecdc4" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="205" cy="350" r="5" fill="#4ecdc4" opacity="0.95"/>
+              </g>
+              <g class="map-dot-group" data-type="icar" data-label="ICAR Kolkata · East Region Hub">
+                <circle class="map-pulse-ring" cx="295" cy="165" r="10" fill="#4ecdc4" opacity="0.15"/>
+                <circle class="map-dot-pulse" cx="295" cy="165" r="5" fill="#4ecdc4" opacity="0.95"/>
+              </g>
+            </g>
+
+            <!-- FPO nodes (coral, 15000+) - smaller dots -->
+            <g id="fpo-nodes">
+              <circle class="map-dot-pulse" cx="175" cy="155" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="195" cy="162" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="215" cy="152" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="250" cy="125" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="265" cy="158" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="180" cy="258" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="198" cy="278" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="255" cy="245" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="170" cy="310" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="185" cy="330" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="228" cy="315" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="152" cy="238" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="148" cy="215" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="165" cy="175" r="2.5" fill="#e85d5d" opacity="0.7"/>
+              <circle class="map-dot-pulse" cx="245" cy="185" r="2.5" fill="#e85d5d" opacity="0.7"/>
+            </g>
+
+            <!-- Connection lines (hidden by default, shown on hover via JS) -->
+            <g id="map-connection-lines" opacity="0">
+              <line x1="232" y1="200" x2="208" y2="90" stroke="rgba(212,168,67,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+              <line x1="232" y1="200" x2="238" y2="268" stroke="rgba(212,168,67,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+              <line x1="232" y1="200" x2="295" y2="165" stroke="rgba(212,168,67,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+              <line x1="232" y1="200" x2="205" y2="350" stroke="rgba(212,168,67,0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+            </g>
+
+            <!-- "Unified by AdiOS" label -->
+            <g id="map-adios-label" opacity="0" style="transition:opacity 0.4s ease">
+              <rect x="360" y="190" width="128" height="40" rx="6" fill="rgba(212,168,67,0.15)" stroke="#d4a843" stroke-width="1.2"/>
+              <text x="424" y="207" text-anchor="middle" fill="#d4a843" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700">Unified by AdiOS</text>
+              <text x="424" y="222" text-anchor="middle" fill="rgba(232,230,227,0.6)" font-family="JetBrains Mono,monospace" font-size="8">One OS. All nodes.</text>
+              <line x1="360" y1="210" x2="295" y2="165" stroke="rgba(212,168,67,0.4)" stroke-width="1" stroke-dasharray="3 3"/>
+            </g>
+          </svg>
+          <div class="india-map-legend">
+            <div class="map-legend-item">
+              <div class="map-legend-dot" style="background:#d4a843"></div>
+              <span>731 KVKs (Krishi Vigyan Kendras)</span>
+            </div>
+            <div class="map-legend-item">
+              <div class="map-legend-dot" style="background:#4ecdc4"></div>
+              <span>113 ICAR Institutes</span>
+            </div>
+            <div class="map-legend-item">
+              <div class="map-legend-dot" style="background:#e85d5d"></div>
+              <span>15,000+ FPOs</span>
+            </div>
+          </div>
+          <div class="india-map-source">Source: Ministry of Agriculture Digital Agriculture Mission 2025 · ICAR Annual Report 2024–25 · hover nodes to explore</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -759,6 +1197,33 @@
     <div class="stack-caption reveal-up">
       <p>Everyone is building the layers above and below. AdiOS is the missing piece that connects them — the integration, trust, and compliance layer that neither side can deliver alone.</p>
     </div>
+
+    <!-- ── MARKET GROWTH LINE CHART ──────────────────────────── -->
+    <div class="market-chart-wrapper reveal-up" id="market-chart-wrapper">
+      <div class="market-chart-title">India AI Market Growth Trajectory</div>
+      <div class="market-chart-headline">$7.6B → $126B by 2030 — 42% CAGR</div>
+      <canvas id="market-growth-canvas" height="200" aria-label="India AI market growth line chart from 2020 to 2030"></canvas>
+      <div class="market-chart-source">Source: Google–Inc42 Bharat AI Report 2026 · NASSCOM India AI Readiness Index 2025 · IDC India AI Forecast 2025</div>
+    </div>
+
+    <!-- ── GPU DEPLOYMENT PROGRESS BAR ─────────────────────────── -->
+    <div class="gpu-progress-wrapper reveal-up" id="gpu-progress">
+      <div class="gpu-progress-title">IndiaAI Mission — GPU Deployment Progress</div>
+      <div class="gpu-progress-nums">
+        <div>
+          <div class="gpu-current" id="gpu-count-display">38,000</div>
+          <div class="gpu-current-label">GPUs Deployed</div>
+        </div>
+        <div class="gpu-target">
+          Target: 200,000 GPUs<br>
+          <span style="color:rgba(212,168,67,0.5);font-size:0.65rem">₹65/hr · World's lowest rate</span>
+        </div>
+      </div>
+      <div class="gpu-bar-track">
+        <div class="gpu-bar-fill" id="gpu-bar-fill"></div>
+      </div>
+      <div class="gpu-bar-pct" id="gpu-bar-pct">19% toward target</div>
+    </div>
   </div>
 </section>
 
@@ -882,6 +1347,67 @@
         </svg>
       </div>
       <p class="flywheel-desc">More usage generates more intelligence. More intelligence creates more value. More value attracts more participants. The flywheel accelerates with every query.</p>
+    </div>
+
+    <!-- ── TAM DONUT CHART ─────────────────────────────────── -->
+    <div class="tam-chart-wrapper reveal-up" id="tam-chart">
+      <div class="tam-donut-svg-wrap">
+        <svg id="tam-donut-svg" viewBox="0 0 240 240" role="img" aria-label="India AI TAM breakdown by 2030">
+          <defs>
+            <filter id="tam-glow"><feGaussianBlur stdDeviation="3" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+          </defs>
+          <!-- Background ring -->
+          <circle cx="120" cy="120" r="90" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="28"/>
+          <!-- Enterprise AI segment (amber) ~56% -->
+          <circle class="tam-segment" id="tam-seg-enterprise"
+            cx="120" cy="120" r="90"
+            fill="none" stroke="#d4a843" stroke-width="28"
+            stroke-dasharray="0 565" stroke-dashoffset="0"
+            transform="rotate(-90 120 120)" stroke-linecap="butt"/>
+          <!-- Consumer AI segment (teal) ~44% -->
+          <circle class="tam-segment" id="tam-seg-consumer"
+            cx="120" cy="120" r="90"
+            fill="none" stroke="#4ecdc4" stroke-width="28"
+            stroke-dasharray="0 565" stroke-dashoffset="0"
+            transform="rotate(-90 120 120)" stroke-linecap="butt" opacity="0.75"/>
+          <!-- AdiOS target highlight (glowing overlay) -->
+          <circle class="tam-segment" id="tam-seg-adios"
+            cx="120" cy="120" r="90"
+            fill="none" stroke="#f0c84a" stroke-width="6"
+            stroke-dasharray="0 565" stroke-dashoffset="0"
+            transform="rotate(-90 120 120)" stroke-linecap="round"
+            filter="url(#tam-glow)" opacity="0"/>
+        </svg>
+        <div class="tam-center-label">
+          <div class="tam-center-total">$126B</div>
+          <div class="tam-center-sub">Total TAM 2030</div>
+        </div>
+      </div>
+      <div class="tam-legend">
+        <div class="tam-legend-title">India AI Market TAM Breakdown — 2030</div>
+        <div class="tam-legend-item" id="tam-leg-enterprise">
+          <div class="tam-legend-swatch" style="background:#d4a843"></div>
+          <div class="tam-legend-info">
+            <div class="tam-legend-name">Enterprise AI</div>
+            <div class="tam-legend-val">$71B — 6.5× growth from $11B (2025)</div>
+          </div>
+        </div>
+        <div class="tam-legend-item" id="tam-leg-consumer">
+          <div class="tam-legend-swatch" style="background:#4ecdc4"></div>
+          <div class="tam-legend-info">
+            <div class="tam-legend-name">Consumer AI</div>
+            <div class="tam-legend-val">$55B — from $13B (2024)</div>
+          </div>
+        </div>
+        <div class="tam-legend-item" id="tam-leg-adios" style="border:1px solid rgba(240,200,74,0.3);border-radius:6px">
+          <div class="tam-legend-swatch" style="background:#f0c84a"></div>
+          <div class="tam-legend-info">
+            <div class="tam-legend-name" style="color:#f0c84a">AdiOS Target Slice</div>
+            <div class="tam-legend-val">Infrastructure OS layer across both segments</div>
+          </div>
+        </div>
+        <div class="tam-source">Source: NASSCOM–IDC India Enterprise AI 2025 · Google–Inc42 Bharat AI Report 2026</div>
+      </div>
     </div>
   </div>
 </section>
